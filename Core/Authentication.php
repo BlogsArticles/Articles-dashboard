@@ -17,10 +17,8 @@ class Authentication
         ])->find();
 
         if ($user) {
-
-            // $password == $user['password'] ? true : false;
-
-            if ($password == $user['password']){ // you should use verify password function 
+            // you should use verify password function
+            if ($password == $user['password']){
                 
                 self::login($user);
 
@@ -59,7 +57,7 @@ class Authentication
         } else {
 
             return null;
-            
+
         }
     }
 }
