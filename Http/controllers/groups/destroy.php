@@ -9,6 +9,13 @@ if(!isset($_POST["id"])){
     abort(404);
 }
 
+/**
+ * check if group not admin or editor before delete
+ */
+if(in_array($_POST["id"] ,[1,2])){
+    abort(403);
+}
+
 $group = $db->query('select * from articles_blog.groups where id= :id',[
     "id"=>$_POST["id"]
 ])->findOrFail();
