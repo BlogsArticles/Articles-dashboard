@@ -4,14 +4,17 @@ use Core\App;
 use Core\Authentication as Auth;
 use Core\Validator;
 
-// check if user mark remember me or not
 
+$email = $_POST['email'];
+$password = $_POST['password'];
 
-// check credentials of that user
-if (!empty($_POST['email']) && !empty($_POST['password'])) {
+if ($email && $password) {
 
-    if (Auth::checkUser($_POST['email'], $_POST['password'])){
+    $user = Auth::checkUser($email, $password);
 
+    if ($user) {
+
+        Auth::rememberMe($user['id']);
         view('index.view.php');
 
     } else {

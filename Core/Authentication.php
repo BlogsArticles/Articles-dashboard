@@ -22,9 +22,12 @@ class Authentication
                 
                 self::login($user);
 
-                return true ;
+                return $user ;
 
-            } else return false ;
+            } else {
+
+                return false ;
+            }
 
         } else {
 
@@ -38,17 +41,17 @@ class Authentication
     }
 
     
-    // Auth function that returns the authenticated user's information
-    public static function auth()
+    // user function that returns the authenticated user's information
+    public static function user()
     {
 
-        if (isset($_SESSION['user'])) {
+        if (isset($_SESSION['user_id'])) {
 
             $query = 'select * from users where id = :id';
 
             return App::resolve(Database::class)->query($query, [
     
-                'id'=>$_SESSION['user']['user_id']
+                'id'=>$_SESSION['user_id']
     
             ])->find();
     
@@ -72,11 +75,13 @@ class Authentication
             
             $token = bin2hex(random_bytes(16));
 
-            // Set the token in a cookie that expires in 30 days
-            setcookie('remember_token', $token, time() + (30 * 24 * 60 * 60));
+            setcookie('remember_token', $token, [
+                'expires'=> time() + (5 * 60),
+                'httponly'=> true
+
+            ]);
         
-            // Store the token in the database
-            $query = 'UPDATE users SET "remember_me" = :token  WHERE id =:id';
+            $query = 'UPDATE users SET remember_me = :token  WHERE id =:id';
 
             App::resolve(Database::class)->query($query, [
                 'id' => $id,
