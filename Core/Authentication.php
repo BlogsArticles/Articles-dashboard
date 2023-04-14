@@ -73,7 +73,7 @@ class Authentication
 
         if (isset($_POST['remember_me'])) {
             
-            $token = bin2hex(random_bytes(16));
+            $token = hash('ripemd160', $id);
 
             setcookie('remember_token', $token, [
                 'expires'=> time() + (5 * 60),
