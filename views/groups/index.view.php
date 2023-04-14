@@ -25,7 +25,7 @@
 
     <!-- Main content -->
     <section class="content">
-    <a class="btn btn-app" href="groups/create"><i class="fas fa-plus-circle"></i></a> 
+    <a class="btn btn-app" href="/groups/create"><i class="fas fa-plus-circle"></i></a> 
         <div class="container-fluid">
         <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
@@ -48,14 +48,15 @@
                             <td><?=$group["description"]?></td>
                             <td><i class="fa <?=$group["icon"]?>"></i></td>
                             <td>
-                                <form action="groups/<?=$group["id"]?>" method="post">
+                                <form action="group/edit?id=<?=$group["id"]?>" method="post">
                                 <input type="hidden" name="_method" value="PUT">
                                     <button class="btn " type="submit"><i class="fas fa-edit"></i></button>
                                 </form>
                             </td>
                             <td>
-                                <form action="groups/<?=$group["id"]?>" method="post">
+                                <form action="group?id=<?=$group["id"]?>" method="post">
                                 <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="id" value="<?= $group['id'] ?>">
                                 <button class="btn " type="submit"><i class="fas fa-trash-alt"></i></button> 
                                 </form>
                             </td>
