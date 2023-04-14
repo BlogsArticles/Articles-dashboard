@@ -1,1 +1,5 @@
+# Vendor files
 vendor
+
+# Config file
+config.php
