@@ -12,9 +12,9 @@ class Logger
         static::add($message, 'debug');
     }
 
-    public static function error($message)
+    public static function error(\Exception $exception)
     {
-        static::add($message, 'error');
+        static::add($exception, 'error');
     }
 
     public static function warning($message)
@@ -27,10 +27,10 @@ class Logger
         static::add($message, 'info');
     }
 
-    public static function add($message, $level = 'debug')
+    public static function add($exception, $level = 'debug')
     {
 
-        $log_entry = self::formatLogEntry($message,$level);
+        $log_entry = self::formatLogEntry($exception,$level);
 
         $file = self::openFile();
 
@@ -39,16 +39,16 @@ class Logger
         fclose($file);
     }
 
-    public static function formatLogEntry($message, $level):string
+    public static function formatLogEntry($exception, $level):string
     {
         $log_entey =  [
             'timestamp' => self::getDate(),
             'ip' => self::getIpAddress(),
             'browser' => self::getBrowser(),
             'level' => self::fomatLevel($level),
-            'message' => self::formatMessage($message),
-            'line' => self::getErrorLine(),
-            'file' => self::getCallFile()
+            'message' => self::formatMessage($exception->getMessage()),
+            'line' => self::getErrorLine($exception),
+            'file' => self::getCallFile($exception)
         ];
 
         return implode(', ', $log_entey) . PHP_EOL;
@@ -79,14 +79,14 @@ class Logger
         return '"' . $message . '"';
     }
 
-    public static function getErrorLine()
+    public static function getErrorLine($exception)
     {
-        return 'In line ' . debug_backtrace(0)[3]['line'];
+        return 'In line ' . $exception->getTrace()[0]['line'];
     }
 
-    public static function getCallFile()
+    public static function getCallFile($exception)
     {
-        return 'In file ' . debug_backtrace(0)[3]['file'];
+        return 'In file ' . $exception->getTrace()[0]["file"];
     }
 
     public static function openFile()

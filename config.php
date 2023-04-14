@@ -8,7 +8,11 @@ return [
         'charset' => 'utf8mb4'
     ],
     'username' => 'root',
-    'password' => 'password'
+    'password' => 'password',
+
+    'logs' => [
+        'file' => BASE_PATH . 'storage/logs/log.txt'
+    ]
 
     //
 ];
