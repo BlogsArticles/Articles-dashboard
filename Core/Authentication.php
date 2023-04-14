@@ -58,11 +58,31 @@ class Authentication
         }
     }
 
-    public function logout()
+    public static function logout()
     {
 
         unset($_SESSION['user_id']);
+
+    }
+
+    public static function rememberMe($id)
+    {
+
+        if (isset($_POST['remember_me'])) {
+            
+            $token = bin2hex(random_bytes(16));
+
+            // Set the token in a cookie that expires in 30 days
+            setcookie('remember_token', $token, time() + (30 * 24 * 60 * 60));
         
+            // Store the token in the database
+            $query = 'UPDATE users SET "remember_me" = :token  WHERE id =:id';
+
+            App::resolve(Database::class)->query($query, [
+                'id' => $id,
+                'token'=>$token
+            ]);
+        }
     }
 }
 

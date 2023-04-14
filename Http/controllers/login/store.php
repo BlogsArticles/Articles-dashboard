@@ -2,14 +2,9 @@
 
 use Core\App;
 use Core\Authentication as Auth;
-use Core\Authentication;
 use Core\Validator;
-use Core\Database;
 
-$db = App::resolve(Database::class);
-
-// check if user mark remember me or not 
-
+// check if user mark remember me or not
 
 
 // check credentials of that user
