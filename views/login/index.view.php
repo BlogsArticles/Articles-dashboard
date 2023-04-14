@@ -42,7 +42,7 @@
 
                     <div class="form-group has-feedback">
                         <input type="password" class="form-control" placeholder="Password" name="password">
-                        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                        <span class="glyphicon glyphicon-lock form-control-feedback text-danger mt-2"> <?php echo $error ?? "" ?></span>
                     </div>
 
                     <div class="row">
