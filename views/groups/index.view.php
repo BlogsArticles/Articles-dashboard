@@ -25,18 +25,18 @@
 
     <!-- Main content -->
     <section class="content">
-    <a class="btn btn-app" href="/groups/create"><i class="fas fa-plus-circle"></i></a> 
         <div class="container-fluid">
-        <div class="d-flex justify-content-end">
-        <form class="search-form col-4" action="/groups">
-            <div class="input-group">
-            <input type="text" name="search" class="form-control" placeholder="search">
-            <div class="input-group-append">
-            <button type="submit" class="btn btn-success"><i class="fas fa-search"></i>
-            </button>
-            </div>
-            </div>
-        </form>
+            <div class="d-flex justify-content-end">
+                <form class="search-form col-4" action="/groups">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="search">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-success"><i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <a class="btn btn-dark" href="/groups/create"><i class="fas fa-plus-circle text-light"></i></a> 
         </div>
         <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
