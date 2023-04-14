@@ -18,7 +18,7 @@ class Authentication
 
         if ($user) {
             // you should use verify password function
-            if ($password == $user['password']){
+            if ($password == $user['password']) {
                 
                 self::login($user);
 
@@ -34,9 +34,7 @@ class Authentication
 
     private static function login($user)
     {
-        $_SESSION['user'] = [
-            'user_id' => $user['id']
-        ];
+        $_SESSION['user_id'] = $user['id'];
     }
 
     
@@ -57,8 +55,14 @@ class Authentication
         } else {
 
             return null;
-
         }
+    }
+
+    public function logout()
+    {
+
+        unset($_SESSION['user_id']);
+        
     }
 }
 
