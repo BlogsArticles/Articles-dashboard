@@ -19,4 +19,5 @@ $router->post('/register', 'registration/store.php')->only('guest');
 
 $router->get('/login', 'login/index.php');
 $router->post('/login', 'login/store.php');
+$router->get('/logout', 'login/destroy.php');
 
