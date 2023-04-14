@@ -13,9 +13,9 @@ $group = $db->query('select * from articles_blog.groups where id= :id',[
     "id"=>$_POST["id"]
 ])->findOrFail();
 
-
-$db->query('delete from articles_blog.groups where id= :id',[
-    "id"=>$_POST["id"]
+$db->query('update articles_blog.groups set is_deleted= :date where id= :id',[
+    "id"=>$_POST["id"],
+    "date"=>date("Y-m-d H:i:s")
 ]);
 
 header('location: /groups');
