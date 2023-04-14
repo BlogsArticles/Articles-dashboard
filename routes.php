@@ -25,5 +25,6 @@ $router->delete('/session', 'session/destroy.php')->only('auth');
 $router->get('/groups', 'groups/index.php');
 $router->get('/groups/create', 'groups/create.php');
 $router->get('/group/edit', 'groups/edit.php');
+$router->put('/group', 'groups/update.php');
 $router->post('/groups', 'groups/store.php');
 $router->delete('/group', 'groups/destroy.php');

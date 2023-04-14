@@ -48,10 +48,7 @@
                             <td><?=$group["description"]?></td>
                             <td><i class="fa <?=$group["icon"]?>"></i></td>
                             <td>
-                                <form action="group/edit?id=<?=$group["id"]?>" method="post">
-                                <input type="hidden" name="_method" value="PUT">
-                                    <button class="btn " type="submit"><i class="fas fa-edit"></i></button>
-                                </form>
+                                <a class="btn" href="group/edit?id=<?=$group["id"]?>"><i class="fas fa-edit"></i></a>
                             </td>
                             <td>
                                 <form action="group?id=<?=$group["id"]?>" method="post">
