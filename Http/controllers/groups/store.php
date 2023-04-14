@@ -49,6 +49,8 @@ if(!$groups_exists && empty($errors)){
         'icon' =>$_POST['icon'],
     ]);
     header("location: /groups");
+    die();
+
 }
 
 /**

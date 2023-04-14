@@ -67,6 +67,8 @@ if(!$group_name_exists && empty($errors)){
     ]);
     // dd($updated);
     header("location: /groups");
+    die();
+
 }
 
 /**

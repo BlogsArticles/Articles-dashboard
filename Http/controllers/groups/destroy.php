@@ -19,3 +19,4 @@ $db->query('delete from articles_blog.groups where id= :id',[
 ]);
 
 header('location: /groups');
+die();
