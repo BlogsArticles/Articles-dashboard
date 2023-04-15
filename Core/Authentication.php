@@ -17,8 +17,10 @@ class Authentication
         ])->find();
 
         if ($user) {
-            // you should use verify password function
-            if ($password == $user['password']) {
+
+            $hashedPass = hash('sha256', $password);
+
+            if ($hashedPass === $user['password']) {
                 
                 self::login($user);
 
@@ -73,8 +75,8 @@ class Authentication
 
         if (isset($_POST['remember_me'])) {
             
-            $token = hash('ripemd160', $id);
-
+            $token = hash('ripemd160', uniqid());
+            
             setcookie('remember_token', $token, [
                 'expires'=> time() + (5 * 60),
                 'httponly'=> true
@@ -92,12 +94,12 @@ class Authentication
 
     public static function checkToken($token)
     {
-        $query = "SELECT user_id FROM users WHERE remember_me = :token ";
-            
+        $query = 'SELECT id FROM users WHERE remember_me =:token';
+ 
         $result = App::resolve(Database::class)->query($query, [
             
-            'remember_me' => $token,
-            
+            'token'=>$token,
+
         ])->find();
 
         if($result) return true;

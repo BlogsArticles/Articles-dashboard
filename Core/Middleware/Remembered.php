@@ -2,7 +2,7 @@
 
 namespace Core\Middleware;
 
-use Core\Authentication;
+use Core\Authentication as Auth;
 
 class Remembered
 {
@@ -16,7 +16,7 @@ class Remembered
             
         }
 
-        if (Authentication::checkToken($_COOKIE['remember_token'])) {
+        if (! Auth::checkToken($_COOKIE['remember_token'])) {
 
             header('location: /login');
             exit();

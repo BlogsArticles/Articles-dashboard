@@ -1,8 +1,6 @@
 <?php 
 
-use Core\App;
 use Core\Authentication as Auth;
-use Core\Validator;
 
 
 $email = $_POST['email'];
@@ -29,7 +27,7 @@ if ($email && $password) {
 
     view('login/index.view.php', [
 
-        'error'=> 'email and Password are required'
+        'error'=> 'Email and Password are required'
     ]);
 }
 
