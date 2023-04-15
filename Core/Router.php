@@ -75,4 +75,7 @@ class Router
 
         die();
     }
+    public function getRoutes(){
+        return $this->routes;
+    }
 }
