@@ -3,7 +3,7 @@
 namespace Core;
 
 
-class Authentication
+abstract class Authentication
 {
 
     public static function checkUser($email, $password)
@@ -67,22 +67,25 @@ class Authentication
     {
 
         unset($_SESSION['user_id']);
+        setcookie("remember_token", "", time() - 3600);
 
     }
 
     public static function rememberMe($id)
     {
+        $config = require base_path('config.php');
 
         if (isset($_POST['remember_me'])) {
             
             $token = hash('ripemd160', uniqid());
             
             setcookie('remember_token', $token, [
-                'expires'=> time() + (5 * 60),
+
+                'expires'=> time() + $config['EXPIRATION_DATE'],
                 'httponly'=> true
 
             ]);
-        
+            
             $query = 'UPDATE users SET remember_me = :token  WHERE id =:id';
 
             App::resolve(Database::class)->query($query, [
