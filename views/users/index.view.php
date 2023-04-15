@@ -25,7 +25,41 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <h1>hello</h1>
+        <table class="table table-hover text-nowrap">
+<thead>
+<tr>
+<th>ID</th>
+<th>name</th>
+<th>email</th>
+<th>Contacts</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
+</thead>
+<tbody>
+
+<?php 
+foreach ($users as $user) {
+   echo "<tr>";
+   echo " <td>$user[id]</td>";
+   echo  "<td>$user[name]</td>";
+   echo  "<td>$user[email]</td>";
+   echo "<td>$user[phone]</td>";
+   echo "<td> <a href='/edit' class='nav-link active'><i class='fas fa-edit'></i></a> </td>";
+
+   echo "<td> <a href='/edit' class='nav-link active'>
+   <i class='fas fa-trash-alt'></i>
+</a></td>";
+   echo " </tr>" ;
+   
+}
+
+?>
+
+</tbody>
+</table>
+
+
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
