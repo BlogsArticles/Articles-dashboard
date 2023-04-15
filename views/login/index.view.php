@@ -48,13 +48,13 @@
                         </div>
 
                         <div class="col-12">
-                            <button type="submit" class="btn btn-dark btn-block btn-flat">Sign In</button>
+                            <button type="submit" class="btn btn-dark btn-block btn-flat my-2">Sign In</button>
                         </div>
 
                     </div>
                 </form>
 
-                <a href="#">I forgot my password</a><br>
+                <a href="#" class="text-decoration-underline">I forgot my password</a><br>
             </div>
 
         </div>
