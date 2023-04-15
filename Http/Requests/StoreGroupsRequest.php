@@ -3,9 +3,10 @@ namespace Http\Requests;
 
 use Core\App;
 use Core\Database;
+use Core\Validator;
 
 
-class storeGroupsRequest
+class StoreGroupsRequest
 {
 
     protected $errors=[];
@@ -16,20 +17,17 @@ class storeGroupsRequest
         $this->rules();
     }
 
-    public static function string($value, $min = 1, $max = INF)
-    {
-        $value = trim($value);
-
-        return strlen($value) >= $min && strlen($value) <= $max;
-    }
-
     public function rules(){
 
     /**
      *  validate data
      */
-    if (! self::string($_POST['name'], 5, 100)) {
-        $this->errors['name'] = 'Group name should be between 5 ,100 characters.';
+    if (! Validator::string($_POST['name'], 4, 100)) {
+        if(!empty($_POST['name'])){
+            $errors['name'] = 'A Group name of no less than 4 characters is required.';
+        }else{
+            $errors['name'] = 'Group name should be provided.';
+        }
     }
     /**
      *  check if icon exists in database

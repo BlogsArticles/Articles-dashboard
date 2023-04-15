@@ -2,11 +2,11 @@
 use Core\App;
 use Core\Database;
 use Core\Validator;
-use Http\Requests\storeGroupsRequest;
+use Http\Requests\StoreGroupsRequest;
 
 $db = App::resolve(Database::class);
 
-$errors = (new storeGroupsRequest())->rules();
+$errors = (new StoreGroupsRequest())->rules();
 
 /**
  *  save old values
