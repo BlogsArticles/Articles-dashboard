@@ -51,3 +51,13 @@ function redirect($path)
     header("location: {$path}");
     exit();
 }
+
+function rememberValue($value)
+{
+
+    if (isset($_POST[$value]) && !empty($_POST[$value])) {
+
+        return $_POST[$value];
+
+    }
+}
