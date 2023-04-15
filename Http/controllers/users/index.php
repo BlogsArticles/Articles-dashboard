@@ -8,7 +8,7 @@ $users = $db->query('select u.* ,g.name as group_name  from users u ,blog.groups
 
 
 
-var_dump($users);
+// var_dump($users);
 
 view("users/index.view.php", [
    

@@ -25,6 +25,20 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
+            <div class="d-flex justify-content-end">
+                <form class="search-form col-4" action="/groups">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="search">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-success"><i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <a class="btn btn-dark" href="/groups/create"><i class="fas fa-plus-circle text-light"></i></a>
+            </div>
+
+
             <table class="table table-hover text-nowrap">
                 <thead>
                     <tr>
@@ -41,18 +55,22 @@
 
                     <?php
                     foreach ($users as $user) {
-                        echo "<tr>";
-                        echo " <td>$user[id]</td>";
-                        echo  "<td>$user[name]</td>";
-                        echo  "<td>$user[email]</td>";
-                        echo "<td>$user[phone]</td>";
-                        echo "<td>$user[group_name]</td>";
-                        echo "<td> <a href='/edit' class='nav-link active'><i class='fas fa-edit'></i></a> </td>";
-                        echo "<td> <a href='/edit' class='nav-link active'><i class='fas fa-trash-alt'></i></a></td>";
-                        echo " </tr>";
-                    }
-
                     ?>
+                        <tr>
+                            <td><?= $user['id'] ?></td>
+                            <td><?= $user['name'] ?></td>
+                            <td><?= $user['email'] ?></td>
+                            <td><?= $user['phone'] ?></td>
+                            <td><?= $user['group_name'] ?></td>
+
+                            <td> <a href='/edit' class='nav-link active'><i class='fas fa-edit'></i></a> </td>
+                            <td> <a href='/edit' class='nav-link active'><i class='fas fa-trash-alt'></i></a></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+
+
 
                 </tbody>
             </table>
