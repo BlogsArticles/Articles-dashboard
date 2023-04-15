@@ -34,10 +34,27 @@
                         <th>ID</th>
                         <th>Title</th>
                         <th>Summary</th>
-                        <th>Published at</th>
+                        <th>Published At</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
+                    <?php foreach ($articles as $article): ?>
+                        <tr>
+                            <td><?= $article['id'] ?></td>
+                            <td><?= $article['title'] ?></td>
+                            <td><?= $article['summary'] ?></td>
+                            <td><?= $article['publish_at'] ?></td>
+                            <td class="d-flex">
+                                <a <?= "href='article?id={$article['id']}'"; ?> class="btn btn-dark mr-2">Show</a>
+                                <form action="/article" method="post">
+                                    <input name="_method" value="DELETE" type="hidden">
+                                    <input name="id" value=<?= $article['id'] ?> type="hidden">
+                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
