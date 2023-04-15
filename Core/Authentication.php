@@ -89,5 +89,20 @@ class Authentication
             ]);
         }
     }
+
+    public static function checkToken($token)
+    {
+        $query = "SELECT user_id FROM users WHERE remember_me = :token ";
+            
+        $result = App::resolve(Database::class)->query($query, [
+            
+            'remember_me' => $token,
+            
+        ])->find();
+
+        if($result) return true;
+
+        return false;
+    }
 }
 

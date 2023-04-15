@@ -1,6 +1,6 @@
 <?php
 
-$router->get('/', 'index.php');
+$router->get('/', 'index.php')->only('remembered');
 $router->get('/about', 'about.php');
 $router->get('/contact', 'contact.php');
 
