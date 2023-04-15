@@ -25,7 +25,7 @@ if (! Validator::string($_POST['name'], 5, 100)) {
 /**
  *  check if icon exists in database
  */
-$isIcon=$db->query("select * from articles_blog.icons where name = :name",["name"=>$_POST['icon']])->find();
+$isIcon=$db->query("select * from `icons` where name = :name",["name"=>$_POST['icon']])->find();
 if ($isIcon==false) {
     $errors['icon'] = 'Group should have an icon from menu.';
 }
@@ -37,13 +37,13 @@ if (! Validator::string($_POST['description'], 10, 255)) {
 /**
  *  check if group already exist
  */
-$groups_exists=$db->query("select * from articles_blog.groups where name = :name",["name"=>$_POST['name']])->find();
+$groups_exists=$db->query("select * from `groups` where name = :name",["name"=>$_POST['name']])->find();
 
 /**
  *  if all data is good save and redirect to index
  */
 if(!$groups_exists && empty($errors)){
-    $icons = $db->query('insert into articles_blog.groups (name, description,icon) VALUES(:name, :description,:icon)', [
+    $icons = $db->query('insert into `groups` (name, description,icon) VALUES(:name, :description,:icon)', [
         'name' => $_POST['name'],
         'description' => $_POST['description'],
         'icon' =>$_POST['icon'],

@@ -7,12 +7,12 @@ if(!isset($_GET["id"])){
     abort(404);
 }
 
-$group = $db->query('select * from articles_blog.groups where id= :id',[
+$group = $db->query('select * from `groups` where id= :id',[
     "id"=>$_GET["id"]
 ])->findOrFail();
 
 // dd($group);
-$icons = $db->query('select * from articles_blog.icons')->get();
+$icons = $db->query('select * from `icons`')->get();
 
 
 $old=$group;

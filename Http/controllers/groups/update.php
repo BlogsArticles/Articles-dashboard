@@ -21,10 +21,11 @@ $old["id"]=$_POST['id']??'';
 if (! isset($_POST['id'])) {
     abort(404);
 }
-$group=$db->query("select * from articles_blog.groups where id = :id",["id"=>$_POST['id']])->find();
+$group=$db->query("select * from `groups` where id = :id",["id"=>$_POST['id']])->find();
 if(!$group){
     abort(404);
 }
+
 /**
  *  validate data
  */
@@ -39,7 +40,7 @@ if (! Validator::string($_POST['name'], 4, 100)) {
 /**
  *  check if icon exists in database
  */
-$isIcon=$db->query("select * from articles_blog.icons where name = :name",["name"=>$_POST['icon']])->find();
+$isIcon=$db->query("select * from `icons` where name = :name",["name"=>$_POST['icon']])->find();
 if ($isIcon==false) {
     $errors['icon'] = 'Group should have an icon from menu.';
 }
@@ -51,7 +52,7 @@ if (! Validator::string($_POST['description'], 10, 255)) {
 /**
  *  check if group already exist
  */
-$group_name_exists=$db->query("select * from articles_blog.groups where name = :name and id!= :id ",[
+$group_name_exists=$db->query("select * from `groups` where name = :name and id!= :id ",[
     "name"=>$_POST['name'],
     "id"=>$_POST['id']]
     )->find();
@@ -59,7 +60,7 @@ $group_name_exists=$db->query("select * from articles_blog.groups where name = :
  *  if all data is good save and redirect to index
  */
 if(!$group_name_exists && empty($errors)){
-    $updated=$db->query('update articles_blog.groups  set name= :name, description= :description,icon= :icon where id=:id', [
+    $updated=$db->query('update `groups`  set name= :name, description= :description,icon= :icon where id=:id', [
         'name' => $_POST['name'],
         'description' => $_POST['description'],
         'icon' =>$_POST['icon'],
@@ -82,7 +83,7 @@ if ($group_name_exists) {
  *  data isn't valid
  *  reload create group page again 
  */
-$icons = $db->query('select * from articles_blog.icons')->get();
+$icons = $db->query('select * from `icons`')->get();
 view("groups/edit.view.php",[
     "old"=>$old,
     "errors"=>$errors,

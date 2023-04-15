@@ -16,11 +16,11 @@ if(in_array($_POST["id"] ,[1,2])){
     abort(403);
 }
 
-$group = $db->query('select * from articles_blog.groups where id= :id',[
+$group = $db->query('select * from `groups` where id= :id',[
     "id"=>$_POST["id"]
 ])->findOrFail();
 
-$db->query('update articles_blog.groups set is_deleted= :date where id= :id',[
+$db->query('update `groups` set is_deleted= :date where id= :id',[
     "id"=>$_POST["id"],
     "date"=>date("Y-m-d H:i:s")
 ]);
