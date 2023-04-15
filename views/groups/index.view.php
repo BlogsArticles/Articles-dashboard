@@ -32,12 +32,12 @@
                         <input type="text" name="search" class="form-control" placeholder="search">
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-success"><i class="fas fa-search"></i>
-                        </button>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </form>
-            <a class="btn btn-dark" href="/groups/create"><i class="fas fa-plus-circle text-light"></i></a> 
-        </div>
+                </form>
+                <a class="btn btn-dark" href="/groups/create"><i class="fas fa-plus-circle text-light"></i></a> 
+            </div>
         <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
                     <thead>
