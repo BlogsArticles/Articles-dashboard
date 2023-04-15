@@ -64,7 +64,7 @@ if ($groups_exists) {
  *  data isn't valid
  *  reload create group page again 
  */
-$icons = $db->query('select * from articles_blog.icons')->get();
+$icons = $db->query('select * from `icons`')->get();
 view("groups/create.view.php",[
     "old"=>$old,
     "errors"=>$errors,
