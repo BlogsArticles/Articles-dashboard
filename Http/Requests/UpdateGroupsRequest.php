@@ -4,6 +4,7 @@ namespace Http\Requests;
 use Core\App;
 use Core\Database;
 use Core\Validator;
+use Core\Logger;
 
 
 class UpdateGroupsRequest
@@ -13,8 +14,14 @@ class UpdateGroupsRequest
     protected $db;
 
     public function __construct(){
-        $this->db = App::resolve(Database::class);
-        $this->rules();
+        try{
+            $this->db = App::resolve(Database::class);
+            $this->rules();
+
+            $this->rules();
+        }catch(\Exception $e){
+                Logger::error($e);
+        }
     }
 
 

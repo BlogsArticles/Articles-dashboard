@@ -1,9 +1,17 @@
 <?php
 use Core\App;
 use Core\Database;
+use Core\Logger;
 
-$db = App::resolve(Database::class);
-$icons = $db->query('select * from `icons`')->get();
 
-$old=[];
-view("groups/create.view.php",["icons"=>$icons,"old"=>$old]);
+try{
+
+    $db = App::resolve(Database::class);
+    $icons = $db->query('select * from `icons`')->get();
+    $old=[];
+    view("groups/create.view.php",["icons"=>$icons,"old"=>$old]);
+    
+}catch(\Exception $e){
+    Logger::error($e);
+}
+

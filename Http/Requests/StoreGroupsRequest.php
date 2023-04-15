@@ -4,7 +4,7 @@ namespace Http\Requests;
 use Core\App;
 use Core\Database;
 use Core\Validator;
-
+use Core\Logger;
 
 class StoreGroupsRequest
 {
@@ -13,8 +13,13 @@ class StoreGroupsRequest
     protected $db;
 
     public function __construct(){
-        $this->db = App::resolve(Database::class);
-        $this->rules();
+        try{
+            $this->db = App::resolve(Database::class);
+
+            $this->rules();
+        }catch(\Exception $e){
+                Logger::error($e);
+        }
     }
 
     public function rules(){
