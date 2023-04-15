@@ -18,15 +18,14 @@ class StoreGroupsRequest
     }
 
     public function rules(){
-
     /**
      *  validate data
      */
     if (! Validator::string($_POST['name'], 4, 100)) {
         if(!empty($_POST['name'])){
-            $errors['name'] = 'A Group name of no less than 4 characters is required.';
+            $this->errors['name'] = 'A Group name of no less than 4 characters is required.';
         }else{
-            $errors['name'] = 'Group name should be provided.';
+            $this->errors['name'] = 'Group name should be provided.';
         }
     }
     /**
@@ -37,7 +36,7 @@ class StoreGroupsRequest
         $this->errors['icon'] = 'Group should have an icon from menu.';
     }
 
-    if (! self::string($_POST['description'], 10, 255)) {
+    if (! Validator::string($_POST['description'], 10, 255)) {
         $this->errors['description'] = 'A Group description of no more than 255 and no less than 10 characters is required.';
     }
 
