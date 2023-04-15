@@ -35,7 +35,7 @@
                         </div>
                     </div>
                 </form>
-                <a class="btn btn-dark" href="/groups/create"><i class="fas fa-plus-circle text-light"></i></a>
+                <a class="btn btn-dark" href="/users/create"><i class="fas fa-plus-circle text-light"></i></a>
             </div>
 
 
