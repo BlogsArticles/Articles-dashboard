@@ -18,7 +18,9 @@ class StoreGroupsRequest
 
             $this->rules();
         }catch(\Exception $e){
-                Logger::error($e);
+            Logger::error($e);
+            abort(Response::INTERNAL_ERROR);
+
         }
     }
 

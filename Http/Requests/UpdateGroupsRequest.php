@@ -5,6 +5,7 @@ use Core\App;
 use Core\Database;
 use Core\Validator;
 use Core\Logger;
+use Core\Response;
 
 
 class UpdateGroupsRequest
@@ -20,7 +21,9 @@ class UpdateGroupsRequest
 
             $this->rules();
         }catch(\Exception $e){
-                Logger::error($e);
+            Logger::error($e);
+            abort(Response::INTERNAL_ERROR);
+
         }
     }
 
@@ -32,11 +35,11 @@ class UpdateGroupsRequest
      */
 
     if (! isset($_POST['id'])) {
-        abort(404);
+        abort(Response::NOT_FOUND);
     }
     $group=$this->db->query("select * from `groups` where id = :id",["id"=>$_POST['id']])->find();
     if(!$group){
-        abort(404);
+        abort(Response::NOT_FOUND);
     }
 
     /**

@@ -3,6 +3,7 @@
 use Core\App;
 use Core\Database;
 use Core\Logger;
+use Core\Response;
 
 try{
     $db = App::resolve(Database::class);
@@ -19,6 +20,7 @@ try{
 
 }catch(\Exception $e){
     Logger::error($e);
-    abort(500);
+    abort(Response::INTERNAL_ERROR);
+    
     
 }

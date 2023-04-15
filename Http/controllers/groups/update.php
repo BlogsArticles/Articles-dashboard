@@ -4,6 +4,7 @@ use Core\Database;
 use Core\Validator;
 use Http\Requests\UpdateGroupsRequest;
 use Core\Logger;
+use Core\Response;
 
 
 try{
@@ -50,6 +51,8 @@ try{
     ]);
 }catch(\Exception $e){
     Logger::error($e);
+    abort(Response::INTERNAL_ERROR);
+
 
 }
 
