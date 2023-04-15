@@ -37,16 +37,12 @@
                         <input type="text" value="" class="form-control" name="title" id="title" placeholder="Enter article title here">
                     </div>
                     <div class="form-group">
-                        <label for="building-number">Building number</label>
-                        <input type="text" value="" class="form-control" name="building_number" id="building-number" placeholder="Enter Building number">
+                        <label for="content">Content</label>
+                        <textarea class="form-control" cols="10"  rows="4" name="content" id="content" placeholder="Enter article content"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="floor-number">Floor number</label>
-                        <input type="text" value="" class="form-control" name="floor_number" id="floor-number" placeholder="Enter floor number">
-                    </div>
-                    <div class="form-group">
-                        <label for="flat_number">Flat number</label>
-                        <input type="text" value="" class="form-control" name="flat_number" id="flat-number" placeholder="Enter Flat number">
+                        <label for="summary">Summary</label>
+                        <textarea class="form-control" cols="10"  rows="2" name="summary" id="summary" placeholder="Enter article summary"></textarea>
                     </div>
                 <!-- /.card-body -->
 
