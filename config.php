@@ -4,11 +4,11 @@ return [
     'database' => [
         'host' => 'localhost',
         'port' => 3306,
-        'dbname' => 'Blogs',
+        'dbname' => 'blogs',
         'charset' => 'utf8mb4'
     ],
     'username' => 'root',
-    'password' => 'password',
+    'password' => 'qw1234554321',
     'logs' => [
         'file' => BASE_PATH . 'storage/logs/log.txt'
     ]

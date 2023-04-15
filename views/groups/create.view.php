@@ -50,7 +50,7 @@
 
             <div class="form-group">
             <label>Select Icon</label>
-            <select class="form-control selectpicker <?php echo !isset($errors["icon"])?'':'is-invalid';?>" name="icon">
+            <select class="form-control drop-down selectpicker <?php echo !isset($errors["icon"])?'':'is-invalid';?>" name="icon">
                 
             <?php foreach($icons as $icon){?>
 
