@@ -1,0 +1,5 @@
+{
+    "require":{
+        "snapappointments/bootstrap-select":"*"
+    }
+}

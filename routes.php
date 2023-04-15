@@ -17,6 +17,17 @@ $router->post('/notes', 'notes/store.php');
 $router->get('/register', 'registration/create.php')->only('guest');
 $router->post('/register', 'registration/store.php')->only('guest');
 
+// $router->get('/login', 'session/create.php')->only('guest');
+// $router->post('/session', 'session/store.php')->only('guest');
+// $router->delete('/session', 'session/destroy.php')->only('auth');
+
+
+$router->get('/groups', 'groups/index.php');
+$router->get('/groups/create', 'groups/create.php');
+$router->get('/group/edit', 'groups/edit.php');
+$router->put('/group', 'groups/update.php');
+$router->post('/groups', 'groups/store.php');
+$router->delete('/group', 'groups/destroy.php');
 $router->get('/login', 'login/index.php');
 $router->post('/login', 'login/store.php');
 $router->get('/logout', 'login/destroy.php');
