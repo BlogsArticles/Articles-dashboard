@@ -8,7 +8,7 @@ $db = App::resolve(Database::class);
 if(!isset($_POST["id"])){
     abort(404);
 }
-
+// change after users is finished to use user auth ToDo
 /**
  * check if group not admin or editor before delete
  */
