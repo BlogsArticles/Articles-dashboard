@@ -4,7 +4,7 @@ return [
     'database' => [
         'host' => 'localhost',
         'port' => 3306,
-        'dbname' => 'blogs',
+        'dbname' => 'blosgs',
         'charset' => 'utf8mb4'
     ],
     'username' => 'root',
