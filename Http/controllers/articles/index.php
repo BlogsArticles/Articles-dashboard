@@ -5,7 +5,7 @@ use Core\Database;
 
 
 $db = App::resolve(Database::class);
-$recordsPerPage = 1;
+$recordsPerPage = 10;
 $page = $_GET['page'] ?? 1;
 $offset = ($page - 1) * $recordsPerPage;
 
@@ -15,6 +15,7 @@ $articles = $db
 
 foreach ($articles as &$article){
     $article['summary'] = resizeStingAndAppend( $article['summary'] );
+    $article['title'] = resizeStingAndAppend( $article['title'] );
 }
 
 
