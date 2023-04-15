@@ -22,3 +22,7 @@ $router->post('/session', 'session/store.php')->only('guest');
 $router->delete('/session', 'session/destroy.php')->only('auth');
 
 $router->get('/articles', 'articles/index.php');
+$router->get('/article', 'articles/show.php');
+$router->post('/article', 'articles/store.php');
+$router->get('/article/create', 'articles/create.php');
+$router->delete('/article', 'articles/destroy.php');

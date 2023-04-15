@@ -18,8 +18,9 @@ class Database
         ]);
     }
 
-    public function query($query, $params = [])
+    public function query($query, $params = []) // return this to use the method chaining method
     {
+        // Prepared statement to prevent the sql injection
         $this->statement = $this->connection->prepare($query);
 
         $this->statement->execute($params);
