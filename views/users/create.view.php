@@ -38,7 +38,7 @@
                 <div class="col-12">
 
                     <label for="inputAddress" class="form-label">Name</label>
-                    <input type="text" class="form-control <?php echo !isset($errors["name"]) ? '' : 'is-invalid' ?>" id="inputAddress" placeholder="Full Name" name="name" value="<?php  $_POST['name'] ?? "";?> " >
+                    <input type="text" class="form-control <?php echo !isset($errors["name"]) ? '' : 'is-invalid' ?>" id="inputAddress"  name="name" value="<?php echo $_POST['name'] ?? "";?> " >
                     <?php if (isset($errors['name'])) : ?>
                         <div class="invalid-feedback"><?= $errors['name'] ?></div>
                     <?php endif; ?>
@@ -46,7 +46,7 @@
 
                 <div class="col-12">
                     <label for="inputAddress" class="form-label">User Name</label>
-                    <input type="text" class="form-control <?php echo !isset($errors["user_name"]) ? '' : 'is-invalid' ?>" id="inputAddress" placeholder="User Name" name="user_name" value="<?php echo $_POST['user_name'] ?? "" ;?>">
+                    <input type="text" class="form-control <?php echo !isset($errors["user_name"]) ? '' : 'is-invalid' ?>" id="inputAddress"  name="user_name" value="<?php echo $_POST['user_name'] ?? "" ;?>">
                     <?php if (isset($errors['user_name'])) : ?>
                         <div class="invalid-feedback"><?= $errors['user_name'] ?></div>
                     <?php endif; ?>
@@ -63,7 +63,7 @@
 
                 <div class="col-12">
                     <label for="inputAddress" class="form-label">Phone</label>
-                    <input type="number" class="form-control <?php echo !isset($errors["phone"]) ? '' : 'is-invalid' ?>" id="inputAddress" placeholder="Phone Number" name="phone"value="<?php  $_POST['phone'] ?? "";?>">
+                    <input type="number" class="form-control <?php echo !isset($errors["phone"]) ? '' : 'is-invalid' ?>" id="inputAddress"  name="phone" value="<?php echo $_POST['phone'] ?? '';?>">
                     <?php if (isset($errors['phone'])) : ?>
                         <div class="invalid-feedback"><?= $errors['phone'] ?></div>
                     <?php endif; ?>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="col-md-12">
                     <label for="inputPassword4" class="form-label">Password</label>
-                    <input type="password" class="form-control <?php echo !isset($errors["password"]) ? '' : 'is-invalid' ?>" id="inputPassword4" name="password"value="<?php  $_POST['password'] ?? "";?>">
+                    <input type="password" class="form-control <?php echo !isset($errors["password"]) ? '' : 'is-invalid' ?>" id="inputPassword4" name="password" value="<?php echo $_POST['password'] ?? '';?>">
                     <?php if (isset($errors['password'])) : ?>
                         <div class="invalid-feedback"><?= $errors['password'] ?></div>
                     <?php endif; ?>

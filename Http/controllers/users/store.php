@@ -12,6 +12,8 @@ $name = $_POST['name'] ?? "";
 $user_name = $_POST['user_name'] ?? "";
 $group_id = $_POST['group_id'] ?? "";
 $phone = $_POST['phone'] ?? "";
+$date = date("Y-m-d H:i:s");
+
 
 $errors = [];
 if (!Validator::email($email)) {
@@ -46,7 +48,7 @@ if (!empty($errors)) {
     view('users/create.view.php', [
         'errors' => $errors,
         'group_name' => $group_name,
-       
+
 
 
     ]);
@@ -70,6 +72,7 @@ if ($user) {
         'username' => $user_name,
         'group_id' => $group_id,
         'phone' => $phone
+
     ]);
 
 
