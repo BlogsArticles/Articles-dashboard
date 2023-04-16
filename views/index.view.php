@@ -28,7 +28,7 @@
         <div class=" container d-flex justify-content-center">
 
             <canvas id="myChart" class="w-75"></canvas>
-
+    
         </div>
     </section>
 
@@ -37,16 +37,20 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
+
+    Chart.defaults.font.size = 20;
   const ctx = document.getElementById('myChart');
 
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      labels: <?php echo json_encode($name) ?>,
       datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
+        label: '# of members',
+        data: <?php echo json_encode($count) ?>,
+        borderWidth: 1,
+        borderColor: '#19376D',
+        backgroundColor: '#0B2447',
       }]
     },
     options: {
