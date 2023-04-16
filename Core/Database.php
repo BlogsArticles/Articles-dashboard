@@ -3,6 +3,7 @@
 namespace Core;
 
 use PDO;
+use Core\Logger;
 
 class Database
 {
@@ -17,8 +18,11 @@ class Database
             $this->connection = new PDO($dsn, $username, $password, [
                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
             ]);
-        }catch(PDOException $e){
+        }catch(\PDOException $e){
+            Logger::error($e);
+            abort(Response::INTERNAL_ERROR);
         }
+        
     }
 
     public function query($query, $params = [])

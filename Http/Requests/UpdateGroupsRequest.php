@@ -4,6 +4,8 @@ namespace Http\Requests;
 use Core\App;
 use Core\Database;
 use Core\Validator;
+use Core\Logger;
+use Core\Response;
 
 
 class UpdateGroupsRequest
@@ -13,8 +15,11 @@ class UpdateGroupsRequest
     protected $db;
 
     public function __construct(){
+        
         $this->db = App::resolve(Database::class);
         $this->rules();
+
+        
     }
 
 
@@ -25,11 +30,11 @@ class UpdateGroupsRequest
      */
 
     if (! isset($_POST['id'])) {
-        abort(404);
+        abort(Response::NOT_FOUND);
     }
     $group=$this->db->query("select * from `groups` where id = :id",["id"=>$_POST['id']])->find();
     if(!$group){
-        abort(404);
+        abort(Response::NOT_FOUND);
     }
 
     /**

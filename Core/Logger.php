@@ -66,7 +66,7 @@ class Logger
 
     public static function getBrowser()
     {
-        return $_SERVER['HTTP_SEC_CH_UA'];
+        return $_SERVER['HTTP_SEC_CH_UA']??'';
     }
 
     public static function fomatLevel($level)
