@@ -28,8 +28,8 @@
 
 
         <div class="card card-dark ">
-            <div class="card-header">
-                <h3 class="card-title">Create User</h3>
+            <div class="card-header text-center">
+                <h3 class="card-title ">Create User</h3>
             </div>
 
 
@@ -87,10 +87,13 @@
                     <?php endif; ?>
                 </div>
 
-                <div class="mt-2 mx-2"><input type="submit" class="btn btn-success" value="Create"></div>
+              
 
 
-
+                
+            <div class="card-footer">
+            <input type="submit" class="btn btn-success" value="Create">
+            </div>
             </form>
         </div>
 
