@@ -15,16 +15,11 @@ class UpdateGroupsRequest
     protected $db;
 
     public function __construct(){
-        try{
-            $this->db = App::resolve(Database::class);
-            $this->rules();
+        
+        $this->db = App::resolve(Database::class);
+        $this->rules();
 
-            $this->rules();
-        }catch(\Exception $e){
-            Logger::error($e);
-            abort(Response::INTERNAL_ERROR);
-
-        }
+        
     }
 
 

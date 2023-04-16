@@ -24,3 +24,9 @@
 16-04-23 01:20:22, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [2002] No such file or directory", In line 18, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
 16-04-23 01:31:34, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [2002] No such file or directory", In line 18, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
 16-04-23 01:31:36, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [2002] No such file or directory", In line 18, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+16-04-23 10:45:13, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [2002] No such file or directory", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+16-04-23 10:45:17, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [2002] No such file or directory", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+16-04-23 10:46:34, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [2002] No such file or directory", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+16-04-23 10:46:37, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [2002] No such file or directory", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+16-04-23 10:50:46, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [1049] Unknown database 'blogsasd'", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+16-04-23 10:55:51, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [1049] Unknown database 'blogsasd'", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php

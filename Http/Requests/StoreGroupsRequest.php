@@ -5,7 +5,7 @@ use Core\App;
 use Core\Database;
 use Core\Validator;
 use Core\Logger;
-
+use Core\Response;
 class StoreGroupsRequest
 {
 
@@ -13,15 +13,11 @@ class StoreGroupsRequest
     protected $db;
 
     public function __construct(){
-        try{
-            $this->db = App::resolve(Database::class);
+        
+        $this->db = App::resolve(Database::class);
 
-            $this->rules();
-        }catch(\Exception $e){
-            Logger::error($e);
-            abort(Response::INTERNAL_ERROR);
-
-        }
+        $this->rules();
+        
     }
 
     public function rules(){
