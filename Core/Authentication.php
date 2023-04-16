@@ -73,7 +73,7 @@ abstract class Authentication
 
     public static function rememberMe($id)
     {
-        $config = require base_path('config.php');
+
 
         if (isset($_POST['remember_me'])) {
             
@@ -81,7 +81,7 @@ abstract class Authentication
             
             setcookie('remember_token', $token, [
 
-                'expires'=> time() + $config['EXPIRATION_DATE'],
+                'expires'=> time() + 24 * 60 * 60,
                 'httponly'=> true
 
             ]);

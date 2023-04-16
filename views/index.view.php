@@ -24,9 +24,44 @@
         <div class="container-fluid">
             <h1>hello</h1>
         </div>
+
+        <div class=" container d-flex justify-content-center">
+
+            <canvas id="myChart" class="w-75"></canvas>
+    
+        </div>
     </section>
 
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+
+    Chart.defaults.font.size = 20;
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: <?php echo json_encode($name) ?>,
+      datasets: [{
+        label: '# of members',
+        data: <?php echo json_encode($count) ?>,
+        borderWidth: 1,
+        borderColor: '#19376D',
+        backgroundColor: '#0B2447',
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
 
 
 
