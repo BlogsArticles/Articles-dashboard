@@ -1,23 +1,32 @@
 <?php
 use Core\App;
 use Core\Database;
+use Core\Logger;
 
-$query = 'select count(*) as count , gps.name from users , gps where gps.id = users.group_id group by gps.name';
+$query = 'select count(*) as count , groups.name from users , gps where gps.id = users.group_id group by gps.name';
 
-$db = App::resolve(Database::class);
-$groups = $db->query($query, [])->get();
-$name = [];
-$count = [];
+try {
 
-foreach ($groups as $group) {
+    $db = App::resolve(Database::class);
+    $groups = $db->query($query, [])->get();
+    $name = [];
+    $count = [];
+    
+    foreach ($groups as $group) {
+    
+        $name[] = $group['name'];
+        $count[] = $group['count'];
+    
+    }
+    
+    view("index.view.php", [
+        'heading' => 'Home',
+        'name' => $name,
+        'count' => $count
+    ]);
+    
+  }catch (Exception $e) {
 
-    $name[] = $group['name'];
-    $count[] = $group['count'];
-
-}
-
-view("index.view.php", [
-    'heading' => 'Home',
-    'name' => $name,
-    'count' => $count
-]);
+    Logger::error($e);
+    view("403.php");
+  }
