@@ -26,6 +26,9 @@
 
     <!-- Main content -->
     <section class="content">
+        <div class="container d-flex justify-content-end">
+            <a href="/article/create" class="btn btn-dark mr-2 mb-2">Add article</a>
+        </div>
         <div class="container-fluid">
             <div class="table-responsive">
                 <table class="table table-hover text-nowrap">
@@ -42,8 +45,8 @@
                     <?php foreach ($articles as $article): ?>
                         <tr>
                             <td><?= $article['id'] ?></td>
-                            <td><?= $article['title'] ?></td>
-                            <td><?= $article['summary'] ?></td>
+                            <td style="width: 20em; max-width: 20em; overflow: hidden; text-overflow: ellipsis;"><?= $article['title'] ?></td>
+                            <td style="width: 20em; max-width: 20em; overflow: hidden; text-overflow: ellipsis;"><?= $article['summary'] ?></td>
                             <td><?= $article['publish_at'] ?></td>
                             <td class="d-flex">
                                 <a <?= "href='article?id={$article['id']}'"; ?> class="btn btn-dark mr-2">Show</a>
