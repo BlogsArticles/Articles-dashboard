@@ -55,7 +55,7 @@
                         <?php foreach($groups as $group){ ?>
                         <tr>
                             <td><?=$group["id"]?></td>
-                            <td><?=$group["name"]?></td>
+                            <td><a href="/group?id=<?=$group["id"]?>"><?=$group["name"]?></a></td>
                             <td><?=$group["description"]?></td>
                             <td><i class="fa <?=$group["icon"]?>"></i></td>
                             <td>
