@@ -3,7 +3,8 @@ use Core\App;
 use Core\Database;
 use Core\Logger;
 
-$query = 'select count(*) as count , groups.name from users , gps where gps.id = users.group_id group by gps.name';
+$query = 'select count(*) as count , `groups`.name from users , `groups`
+          where `groups`.id = users.group_id group by `groups`.name';
 
 try {
 
@@ -24,9 +25,9 @@ try {
         'name' => $name,
         'count' => $count
     ]);
-    
+
   }catch (Exception $e) {
 
     Logger::error($e);
-    view("403.php");
+    view("500.php");
   }
