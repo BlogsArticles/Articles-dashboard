@@ -15,6 +15,8 @@ $phone = $_POST['phone'] ?? "";
 $date = date("Y-m-d H:i:s");
 
 
+
+
 $errors = [];
 if (!Validator::email($email)) {
     $errors['email'] = 'Please provide a valid email address.';
@@ -40,11 +42,19 @@ if (!Validator::number($group_id)) {
     $errors['group_id'] = 'Please provide a valid group.';
 }
 
+$user = $db->query('select * from users where email = :email', [
+    'email' => $email
+])->find();
+
+if ($user) {
+    $errors['email'] = 'this email already exists.';
+}
 
 
 if (!empty($errors)) {
     // dd("hi");
     $group_name = $db->query('select name,id from blog.groups; ')->get();
+
     view('users/create.view.php', [
         'errors' => $errors,
         'group_name' => $group_name,
@@ -56,26 +66,22 @@ if (!empty($errors)) {
     exit();
 }
 
-$user = $db->query('select * from users where email = :email', [
-    'email' => $email
-])->find();
-
-if ($user) {
-    $errors['email'] = 'this email already exists.';
-} else {
-    $hashed_password = hash('sha256', $_POST['password']);
-    $db->query('INSERT INTO users(email, password,name,username,group_id,phone) VALUES(:email, :password,:name, :username, :group_id,:phone)', [
-
-        'email' => $email,
-        'password' => $hashed_password,
-        'name' => $name,
-        'username' => $user_name,
-        'group_id' => $group_id,
-        'phone' => $phone
-
-    ]);
 
 
-    header('location: /');
-    exit();
-}
+
+
+$hashed_password = hash('sha256', $_POST['password']);
+$db->query('INSERT INTO users(email, password,name,username,group_id,phone,subscribe_at) VALUES(:email, :password,:name, :username, :group_id,:phone, :subscribe_at)', [
+
+    'email' => $email,
+    'password' => $hashed_password,
+    'name' => $name,
+    'username' => $user_name,
+    'group_id' => $group_id,
+    'phone' => $phone,
+    'subscribe_at' => $date
+]);
+
+
+header('location: /users');
+exit();
