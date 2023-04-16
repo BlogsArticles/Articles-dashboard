@@ -24,3 +24,4 @@ $router->delete('/session', 'session/destroy.php')->only('auth');
 //users-routes
 $router->get('/users', 'users/index.php');
 $router->get('/users/create', 'users/create.php');
+$router->post('/users/store', 'users/store.php');
