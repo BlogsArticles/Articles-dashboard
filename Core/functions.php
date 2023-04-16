@@ -51,15 +51,3 @@ function redirect($path)
     header("location: {$path}");
     exit();
 }
-
-// Using this estimate, the average number of characters in a 9-word string
-// would be approximately 45 characters (9 words x 5 characters per word)
-// The average title length is around 60 characters and for a summary is around 150-200 characters
-function resizeStingAndAppend ($mainText , $textToAppend = '...', $maxSize = 45) : string {
-    $myNewString = $mainText;
-    if ( strlen($mainText) > $maxSize ) {
-        $myNewString = substr($mainText,0,$maxSize);
-        $myNewString= $myNewString.$textToAppend;
-    }
-    return  $myNewString;
-}

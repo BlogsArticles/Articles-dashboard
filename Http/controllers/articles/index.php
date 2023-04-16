@@ -13,13 +13,6 @@ $articles = $db
     ->query("select * from articles where is_deleted IS NULL LIMIT {$offset} , {$recordsPerPage}")
     ->get();
 
-foreach ($articles as &$article){
-    $article['summary'] = resizeStingAndAppend( $article['summary'] );
-    $article['title'] = resizeStingAndAppend( $article['title'] );
-}
-
-
-
 view("articles/index.view.php", [
     'errors' => [],
     'articles' => $articles,
