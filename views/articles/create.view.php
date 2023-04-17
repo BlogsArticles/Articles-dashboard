@@ -30,11 +30,15 @@
             <div class="card card-primary">
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="/article" method="POST">
+                <form action="/article" method="POST" enctype="multipart/form-data">
                 <div class="card-body">
                     <div class="form-group">
                         <label for="title">Title</label>
                         <input type="text" value="" class="form-control" name="title" id="title" placeholder="Enter article title here">
+                    </div>
+                    <div class="form-group">
+                        <label for="content">Article Image</label>
+                        <input class="form-control" name="image" type="file" id="image" accept="image/*">
                     </div>
                     <div class="form-group">
                         <label for="content">Content</label>
