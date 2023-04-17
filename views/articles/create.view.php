@@ -35,18 +35,30 @@
                     <div class="form-group">
                         <label for="title">Title</label>
                         <input type="text"  class="form-control" name="title" id="title" placeholder="Enter article title here" value="<?php echo isset($_POST['title']) ? htmlspecialchars($_POST['title'], ENT_QUOTES) : ''; ?>">
+                        <?php if( isset($errors['title']) ): ?>
+                            <span style="color: red ; font-weight: bolder;"><?= $errors['title'] ;?></span>
+                        <?php endif; ?>
                     </div>
                     <div class="form-group">
                         <label for="content">Article Image</label>
                         <input class="form-control" name="image" type="file" id="image" accept="image/*">
+                        <?php if( isset($errors['image']) ): ?>
+                            <span style="color: red; font-weight: bolder;""><?= $errors['image'] ;?></span>
+                        <?php endif; ?>
                     </div>
                     <div class="form-group">
                         <label for="content">Content</label>
                         <textarea class="form-control" cols="10"  rows="4" name="content" id="content" placeholder="Enter article content"><?php echo isset($_POST['content']) ? htmlspecialchars($_POST['content'], ENT_QUOTES) : ''; ?></textarea>
+                        <?php if( isset($errors['content']) ): ?>
+                            <span style="color: red ; font-weight: bolder;"><?= $errors['content'] ;?></span>
+                        <?php endif; ?>
                     </div>
                     <div class="form-group">
                         <label for="summary">Summary</label>
                         <textarea class="form-control" cols="10"  rows="2" name="summary" id="summary" placeholder="Enter article summary"><?php echo isset($_POST['summary']) ? htmlspecialchars($_POST['summary'], ENT_QUOTES) : ''; ?></textarea>
+                        <?php if( isset($errors['summary']) ): ?>
+                            <span style="color: red ; font-weight: bolder;"><?= $errors['summary'] ;?></span>
+                        <?php endif; ?>
                     </div>
                 <!-- /.card-body -->
 

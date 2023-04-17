@@ -33,7 +33,7 @@ class StoreArticlesRequest {
      * */
     public function titleValidator () {
         if( empty($_POST['title']) ){
-            $this->errors[] = 'Please fill out the required field: Title';
+            $this->errors['title'] = 'Please fill out the required field: Title';
         }
     }
     /*
@@ -42,15 +42,15 @@ class StoreArticlesRequest {
     public function imageValidator () {
 
         if( empty($_FILES['image']) ){
-            $this->errors[] = 'Please fill out the required field: Article Image';
+            $this->errors['image'] = 'Please fill out the required field: Article Image';
         }
         $extension = explode('/' , $_FILES["image"]["type"])[1];
 
         if ($extension != 'png' && $extension != 'jpg' && $extension != 'jpeg'){
-            $this->errors[] = 'Article Image must be jpg, jpeg or png';
+            $this->errors['image'] = 'Article Image must be jpg, jpeg or png';
         }
         if ( $_FILES["image"]["size"] > $this->UPLOAD_MAX_FILESIZE  ){
-            $this->errors[] = 'Article Image size must be less than 8MB';
+            $this->errors['image'] = 'Article Image size must be less than 8MB';
         }
 
     }
@@ -59,7 +59,7 @@ class StoreArticlesRequest {
      * */
     public function contentValidator () {
         if( empty($_POST['content']) ){
-            $this->errors[] = 'Please fill out the required field: Content';
+            $this->errors['content'] = 'Please fill out the required field: Content';
         }
     }
     /*
@@ -67,7 +67,7 @@ class StoreArticlesRequest {
      * */
     public function summaryValidator () {
         if( empty($_POST['summary']) ){
-            $this->errors[] = 'Please fill out the required field: Summary';
+            $this->errors['summary'] = 'Please fill out the required field: Summary';
         }
     }
 }
