@@ -1,2 +1,6 @@
+# Vendor files
 vendor
+# Config file
 config.php
+# Images Folder
+public/dist/img/
