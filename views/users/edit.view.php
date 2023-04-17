@@ -32,9 +32,10 @@
 
 
 
-            <form class="row g-3" action="/users/store" method="post">
+            <form class="row g-3" action="/users/update" method="post">
 
-
+            <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" name="id" value="<?= $user['id'] ?>">
                 <div class="col-12">
 
                     <label for="inputAddress" class="form-label">Name</label>
@@ -72,7 +73,7 @@
                     <label for="inputAddress" class="form-label  rounded-2 <?php echo !isset($errors["group"]) ? '' : 'is-invalid' ?>">Select Group</label>
                     <select class=" form-select form-select-lg col-12 pb-3" aria-label="Default select example" name="group_id" aria-placeholder="<?php echo $user['group_name'] ?? ''; ?>">
 
-                        <option value=$name[id] selected><?php echo $user['group_name']; ?></option>;
+                        <option value="<?php echo $user['group_id'] ?>" selected><?php echo $user['group_name']; ?></option>;
 
                         <?php foreach ($group_name as $name) {
                             if ($name['name'] != $user['group_name'])  echo "<option value=$name[id]>$name[name]</option>";

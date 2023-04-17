@@ -6,6 +6,13 @@ use Core\Validator;
 
 $db = App::resolve(Database::class);
 
+
+// find the corresponding user
+$user = $db->query('select u.* ,g.name as group_name  from users u ,`groups` g where u.group_id= g.id and u.id = :id', [
+    'id' => $_POST['id']
+])->findOrFail();
+
+
 $email = $_POST['email'] ?? "";
 $password = $_POST['password'] ?? "";
 $name = $_POST['name'] ?? "";
@@ -42,23 +49,28 @@ if (!Validator::number($group_id)) {
     $errors['group_id'] = 'Please provide a valid group.';
 }
 
-$user = $db->query('select * from users where email = :email', [
-    'email' => $email
-])->find();
+$user_email_exists = $db->query(
+    'select * from users where email = :email and users.id != :id',
+    [
+        'email' => $email,
+        'id' => $_POST['id']
+    ]
+)->find();
 
-if ($user) {
+if ($user_email_exists) {
     $errors['email'] = 'this email already exists.';
 }
 
-
+// dd($errors);
 if (!empty($errors)) {
     // dd("hi");
     $group_name = $db->query('select name,id from `groups`; ')->get();
 
-    view('users/create.view.php', [
+
+    view('users/edit.view.php', [
         'errors' => $errors,
         'group_name' => $group_name,
-
+        'user' => $user
 
 
     ]);
@@ -66,22 +78,19 @@ if (!empty($errors)) {
     exit();
 }
 
-
-
-
-
 $hashed_password = hash('sha256', $_POST['password']);
-$db->query('INSERT INTO users(email, password,name,username,group_id,phone,subscribe_at) VALUES(:email, :password,:name, :username, :group_id,:phone, :subscribe_at)', [
-
+// dd("hi");
+$db->query('update users set name = :name , username=:username, password=:password, group_id= :group_id, email=:email, phone=:phone where id = :id', [
+    'id' => $_POST['id'],
     'email' => $email,
     'password' => $hashed_password,
     'name' => $name,
     'username' => $user_name,
     'group_id' => $group_id,
     'phone' => $phone,
-    'subscribe_at' => $date
+
 ]);
 
-
+// redirect the user
 header('location: /users');
-exit();
+die();
