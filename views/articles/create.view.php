@@ -34,7 +34,7 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" value="" class="form-control" name="title" id="title" placeholder="Enter article title here">
+                        <input type="text"  class="form-control" name="title" id="title" placeholder="Enter article title here" value="<?php echo isset($_POST['title']) ? htmlspecialchars($_POST['title'], ENT_QUOTES) : ''; ?>">
                     </div>
                     <div class="form-group">
                         <label for="content">Article Image</label>
@@ -42,11 +42,11 @@
                     </div>
                     <div class="form-group">
                         <label for="content">Content</label>
-                        <textarea class="form-control" cols="10"  rows="4" name="content" id="content" placeholder="Enter article content"></textarea>
+                        <textarea class="form-control" cols="10"  rows="4" name="content" id="content" placeholder="Enter article content"><?php echo isset($_POST['content']) ? htmlspecialchars($_POST['content'], ENT_QUOTES) : ''; ?></textarea>
                     </div>
                     <div class="form-group">
                         <label for="summary">Summary</label>
-                        <textarea class="form-control" cols="10"  rows="2" name="summary" id="summary" placeholder="Enter article summary"></textarea>
+                        <textarea class="form-control" cols="10"  rows="2" name="summary" id="summary" placeholder="Enter article summary"><?php echo isset($_POST['summary']) ? htmlspecialchars($_POST['summary'], ENT_QUOTES) : ''; ?></textarea>
                     </div>
                 <!-- /.card-body -->
 

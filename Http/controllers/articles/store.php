@@ -8,8 +8,7 @@ $errors = (new StoreArticlesRequest)->validateAll();
 
 if( !empty($errors) ){
     view('articles/create.view.php',[
-        'errors' => $errors,
-        'old' => $_POST
+        'errors' => $errors
     ]);
 }
 else {
