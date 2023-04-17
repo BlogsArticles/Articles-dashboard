@@ -35,3 +35,6 @@
 =======
 16-04-23 09:29:50, ::1, "Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99", [ERROR], "SQLSTATE[42S22]: Column not found: 1054 Unknown column 'groups.name' in 'field list'", In line 28, In file C:\xampp\htdocs\Articles-dashboard\Core\Database.php
 >>>>>>> 4abc95b0db9577b060b5cbfe7c8f6a6a60252fda
+18-04-23 12:12:47, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)", In line 19, In file /home/ahmedzein/Desktop/articles-dashboard /Articles-dashboard/Core/Database.php
+18-04-23 12:13:01, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)", In line 19, In file /home/ahmedzein/Desktop/articles-dashboard /Articles-dashboard/Core/Database.php
+18-04-23 12:13:06, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)", In line 19, In file /home/ahmedzein/Desktop/articles-dashboard /Articles-dashboard/Core/Database.php
