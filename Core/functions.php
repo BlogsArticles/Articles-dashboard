@@ -51,3 +51,10 @@ function redirect($path)
     header("location: {$path}");
     exit();
 }
+
+function moveImage ($imageNewName) {
+    $imageDirectory = base_path('/public/dist/img/articles/');
+    $imageNewPath = $imageDirectory . $imageNewName . '.jpg';
+    $_FILES['image']['name'] = $imageNewName;
+    move_uploaded_file( $_FILES['image']['tmp_name'] , $imageNewPath);
+}
