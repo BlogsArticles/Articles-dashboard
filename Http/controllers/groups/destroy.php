@@ -4,6 +4,11 @@ use Core\Database;
 use Core\Validator;
 use Core\Logger;
 use Core\Response;
+use Core\Authentication as Auth;
+
+Auth::only_admin();
+
+
 
 $db = App::resolve(Database::class);
 

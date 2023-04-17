@@ -43,31 +43,26 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>User Name</th>
                             <th>Name</th>
-                            <th>Description</th>
-                            <th>Icon</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Group Name</th>
+                            <th>Subscribe at</th>
+                            <th>Last visit</th>
                         </tr>
                     </thead>
                     <tbody>
-
-                        <?php foreach($groups as $group){ ?>
+                        <?php foreach($users as $user){ ?>
                         <tr>
-                            <td><?=$group["id"]?></td>
-                            <td><a href="/group?id=<?=$group["id"]?>"><?=$group["name"]?></a></td>
-                            <td><?=$group["description"]?></td>
-                            <td><i class="fa <?=$group["icon"]?>"></i></td>
-                            <td>
-                                <a class="btn" href="group/edit?id=<?=$group["id"]?>"><i class="fas fa-edit"></i></a>
-                            </td>
-                            <td>
-                                <form action="group?id=<?=$group["id"]?>" method="post">
-                                <input type="hidden" name="_method" value="DELETE">
-                                <input type="hidden" name="id" value="<?= $group['id'] ?>">
-                                <button class="btn " type="submit"><i class="fas fa-trash-alt"></i></button> 
-                                </form>
-                            </td>
+                            <td><?=$user["id"]?></td>
+                            <td><?=$user["username"]?></td>
+                            <td><?=$user["name"]?></td>
+                            <td><?=$user["email"]?></td>
+                            <td><?=$user["phone"]?></td>
+                            <td><?=$user["group_name"]?></td>
+                            <td><?=$user["subscribe_at"]?></td>
+                            <td><?=$user["last_vist"]??""?></td>
                         </tr>
                         <?php }?>
 

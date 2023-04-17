@@ -8,9 +8,9 @@ return [
         'charset' => 'utf8mb4'
     ],
     'username' => 'root',
-    'password' => 'qw1234554321',
+    'password' => '1234',
     'logs' => [
         'file' => BASE_PATH . 'storage/logs/log.txt',
-    'EXPIRATION_DATE'=> 24 * 60 * 60
+    'EXPIRATION_DATE'=> 3600
     ]
 ];

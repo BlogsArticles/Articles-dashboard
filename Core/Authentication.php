@@ -109,5 +109,11 @@ abstract class Authentication
 
         return false;
     }
+    public static function only_admin(){
+        
+        if(self::user()["group_id"]!=1){
+            abort(Response::FORBIDDEN);
+        }
+    }
 }
 
