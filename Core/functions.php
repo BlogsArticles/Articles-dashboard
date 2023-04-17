@@ -51,7 +51,7 @@ function redirect($path)
     header("location: {$path}");
     exit();
 }
-
+// Refactor required
 function moveImage ($imageNewName) {
     $imageDirectory = base_path('/public/dist/img/articles/');
     $imageNewPath = $imageDirectory . $imageNewName . '.jpg';

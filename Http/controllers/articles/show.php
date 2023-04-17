@@ -11,7 +11,9 @@ $article = $db
         'id' => $articleId
     ])
     ->find();
-
+$imageDirectory = '/dist/img/articles/';
+$imagePath = $imageDirectory . $article['image'] . '.jpg';
+$article['image'] = $imagePath ;
 view('articles/show.view.php',[
     'errors' => [],
     'article' => $article

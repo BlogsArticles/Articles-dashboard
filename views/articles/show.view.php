@@ -27,16 +27,16 @@
     <!-- Main content -->
     <section class="content">
         <div class="container d-flex flex-column">
-            <h2 class="col-12 text-center"><?= $article['title'] ?></h2>
-            <div>
+            <h2 class="col-12 fw-bold text-center"><strong><?= $article['title'] ?></strong></h2>
+            <div class="text-center">
                 <img src="<?= $article['image'] ?>" class="img-fluid my-3">
             </div>
             <div>
-                <h4>Content</h4>
-                <p><?= $article['content'] ?></p>
+                <h4><strong>Content</strong></h4>
+                <p class="fs-4"><?= $article['content'] ?></p>
             </div>
             <div>
-                <h4>Summary</h4>
+                <h4><strong>Summary</strong></h4>
                 <p class="lead"><?= $article['summary'] ?></p>
             </div>
         </div><!-- /.container-fluid -->
