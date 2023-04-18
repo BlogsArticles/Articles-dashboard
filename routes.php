@@ -24,7 +24,24 @@ $router->put('/group', 'groups/update.php')->only(['remembered']);
 $router->post('/groups', 'groups/store.php')->only(['remembered']);
 $router->delete('/group', 'groups/destroy.php')->only(['remembered']);
 
+$router->get('/groups', 'groups/index.php');
+$router->get('/groups/create', 'groups/create.php');
+$router->get('/group/edit', 'groups/edit.php');
+$router->get('/group', 'groups/show.php');
+$router->put('/group', 'groups/update.php');
+$router->post('/groups', 'groups/store.php');
+$router->delete('/group', 'groups/destroy.php');
+
 $router->get('/login', 'login/index.php');
 $router->post('/login', 'login/store.php');
 $router->get('/logout', 'login/destroy.php');
 
+$router->get('/login', 'session/create.php')->only('guest');
+$router->post('/session', 'session/store.php')->only('guest');
+$router->delete('/session', 'session/destroy.php')->only('auth');
+
+$router->get('/articles', 'articles/index.php');
+$router->get('/article', 'articles/show.php');
+$router->post('/article', 'articles/store.php');
+$router->get('/article/create', 'articles/create.php');
+$router->delete('/article', 'articles/destroy.php');

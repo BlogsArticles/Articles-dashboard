@@ -32,10 +32,8 @@ class UpdateGroupsRequest
     if (! isset($_POST['id'])) {
         abort(Response::NOT_FOUND);
     }
-    $group=$this->db->query("select * from `groups` where id = :id",["id"=>$_POST['id']])->find();
-    if(!$group){
-        abort(Response::NOT_FOUND);
-    }
+    $group=$this->db->query("select * from `groups` where id = :id",["id"=>$_POST['id']])->findOrFail();
+    
 
     /**
      *  validate data
