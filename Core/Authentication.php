@@ -97,15 +97,19 @@ abstract class Authentication
 
     public static function checkToken($token)
     {
-        $query = 'SELECT id FROM users WHERE remember_me =:token';
+        if ($token) {
+
+            $query = 'SELECT id FROM users WHERE remember_me =:token';
  
-        $result = App::resolve(Database::class)->query($query, [
-            
-            'token'=>$token,
+            $result = App::resolve(Database::class)->query($query, [
+                
+                'token'=>$token,
+    
+            ])->find();
+    
+            if($result) return true;
 
-        ])->find();
-
-        if($result) return true;
+        }
 
         return false;
     }
