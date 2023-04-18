@@ -4,3 +4,6 @@ vendor
 config.php
 # Images Folder
 public/dist/img/
+
+# Log file
+storage/logs/log.txt
