@@ -13,7 +13,8 @@ if ($email && $password) {
     if ($user) {
 
         Auth::rememberMe($user['id']);
-        view('index.view.php');
+        header('location: /');
+        
 
     } else {
 
