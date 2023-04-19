@@ -62,8 +62,16 @@
                             <td><?= $user['email'] ?></td>
                             <td><?= $user['phone'] ?></td>
                             <td><?= $user['group_name'] ?></td>
-                            <td> <a href='/users/edit?id=<?=$user["id"]?>' class='nav-link active'><i class='fas fa-edit'></i></a> </td>
-                            <td> <a href='/edit' class='nav-link active'><i class='fas fa-trash-alt'></i></a></td>
+                            <td> <a href='/users/edit?id=<?= $user["id"] ?>' class='nav-link active'><i class='fas fa-edit'></i></a> </td>
+
+                            <td>
+                                <form action="destroy?id=<?= $user["id"] ?>" method="post">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <input type="hidden" name="id" value="<?= $user['id'] ?>">
+                                    <button class="btn " type="submit"><i class="fas fa-trash-alt"></i></button>
+                                </form>
+                            </td>
+
                         </tr>
                     <?php
                     }
