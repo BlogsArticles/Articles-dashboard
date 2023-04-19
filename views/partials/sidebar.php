@@ -37,7 +37,7 @@
                      with font-awesome or any other icon font library -->
                 <li class="nav-item menu-open">
                     <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <i class="fa fa-users" aria-hidden="true"></i>
                         <p>
                            Users
                             <i class="right fas fa-angle-left"></i>
@@ -46,7 +46,7 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="/users" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
+                            <i class="fa fa-users" aria-hidden="true"></i>
                                 <p>All Users</p>
                             </a>
                         </li>
