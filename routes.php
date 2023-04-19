@@ -27,6 +27,8 @@ $router->get('/users/create', 'users/create.php');
 $router->post('/users/store', 'users/store.php');
 $router->get('/users/edit', 'users/edit.php');
 $router->put('/users/update', 'users/update.php');
+$router->put('/destroy', 'users/destroy.php');
+
 
 /**update `groups` set is_deleted= :date where id= :i */
 /**select * from `groups` where is_deleted is null */
