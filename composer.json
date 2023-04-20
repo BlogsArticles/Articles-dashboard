@@ -2,5 +2,12 @@
     "require":{
         "snapappointments/bootstrap-select":"*",
         "aws/aws-sdk-php": "^3.263"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
     }
+
 }
