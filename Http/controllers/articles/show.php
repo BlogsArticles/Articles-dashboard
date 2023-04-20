@@ -1,7 +1,7 @@
 <?php
 use Core\App;
 use Core\Database;
-
+use Core\AwsS3Bucket;
 $db = App::resolve(Database::class);
 
 $articleId = intval($_GET['id']);
@@ -11,10 +11,17 @@ $article = $db
         'id' => $articleId
     ])
     ->find();
-$imageDirectory = '/dist/img/articles/';
-$imagePath = $imageDirectory . $article['image'] . '.jpg';
-$article['image'] = $imagePath ;
-view('articles/show.view.php',[
-    'errors' => [],
-    'article' => $article
-]);
+
+
+if ($article) {
+
+    $image= (new AwsS3Bucket())->downloadImage($article['image'].'.jpg');
+
+    view('articles/show.view.php',[
+        'errors' => [],
+        'article' => $article,
+        'image' => $image
+    ]);
+}else{
+    view('404.php');
+}

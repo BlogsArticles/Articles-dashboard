@@ -27,7 +27,6 @@ class AwsS3Bucket
     }
 
     public function uploadImage($imageName,$tempPath){
-
         try {
             $upload = $this->MyBucket->putObject([
                 'Bucket' => (require base_path('config.php'))['s3']['_S3_Bucket_'],
@@ -49,6 +48,8 @@ class AwsS3Bucket
         }catch (Aws\S3\Exception\S3Exception $e) {
             throw new Exception ('There was an error uploading the file');
         }
-        return $image ;
+        $imageData = base64_encode($image['Body']); // Convert binary image data to base64 string
+        $imageSrc = 'data:image/jpg;base64,'.$imageData; // Set image source for HTML img tag
+        return $imageSrc ; // to access the image use $image['Body']
     }
 }
