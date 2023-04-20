@@ -31,7 +31,7 @@
                 <h2 class="col-12 fw-bold text-center card-header"><strong><?= $article['title'] ?></strong></h2>
                 <div class="card-body">
                     <div class="text-center">
-                        <img  width="80%" height="80%" src="<?= $article['image'] ?>" class="img-fluid my-3">
+                        <img  width="80%" height="80%" src="<?= $image ?>" class="img-fluid my-3">
                     </div>
                 </div>
             </div>
