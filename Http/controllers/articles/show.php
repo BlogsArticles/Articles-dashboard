@@ -22,13 +22,17 @@ $article = $db
 
 if ($article) {
 
-    $image= (new AwsS3Bucket())->downloadImage($article['image'].'.jpg');
+    try{
+        $image= (new AwsS3Bucket())->downloadImage($article['image'].'.jpg');
+        view('articles/show.view.php',[
+            'errors' => [],
+            'article' => $article,
+            'image' => $image
+        ]);
+    }catch (Exception $e){
+        view('500.php');
+    }
 
-    view('articles/show.view.php',[
-        'errors' => [],
-        'article' => $article,
-        'image' => $image
-    ]);
 }else{
     view('404.php');
 }

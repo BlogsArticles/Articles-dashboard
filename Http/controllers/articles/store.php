@@ -22,7 +22,12 @@ else {
      * image handling
      * */
     $imageNewName = uniqid();
-    ( new AwsS3Bucket() )->uploadImage($imageNewName.'.jpg',$_FILES['image']['tmp_name']);
+    try{
+        ( new AwsS3Bucket() )->uploadImage($imageNewName.'.jpg',$_FILES['image']['tmp_name']);
+    }catch (Exception $e) {
+        view('500.php');
+        die();
+    }
     /*
      * Database
     * */
