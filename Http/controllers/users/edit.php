@@ -11,7 +11,7 @@ $user = $db->query('select u.* ,g.name as group_name  from users u ,`groups` g w
     'id' => $_GET['id']
 ])->findOrFail();
 
-var_dump($user);
+// var_dump($user);
 // authorize($user['id'] === $currentUserId);
 $group_name = $db->query('select name,id from `groups`; ')->get();
 // $users_group = $db->query('select u.* ,g.name as group_name  from users u ,blog.groups g where u.group_id= g.id;')->get();

@@ -29,9 +29,7 @@ if (!Validator::email($email)) {
     $errors['email'] = 'Please provide a valid email address.';
 }
 
-if (!Validator::string($password, 7, 255)) {
-    $errors['password'] = 'Please provide a password of at least seven characters.';
-}
+
 
 if (!Validator::string($name, 7, 255)) {
     $errors['name'] = 'Please provide a name of at least seven characters.';
@@ -78,8 +76,15 @@ if (!empty($errors)) {
     exit();
 }
 
+if(isset($_POST['password'])){
 $hashed_password = hash('sha256', $_POST['password']);
-// dd("hi");
+
+
+if (!Validator::string($password, 7, 255)) {
+    $errors['password'] = 'Please provide a password of at least seven characters.';
+}
+
+
 $db->query('update users set name = :name , username=:username, password=:password, group_id= :group_id, email=:email, phone=:phone where id = :id', [
     'id' => $_POST['id'],
     'email' => $email,
@@ -90,6 +95,17 @@ $db->query('update users set name = :name , username=:username, password=:passwo
     'phone' => $phone,
 
 ]);
+} else
+{
+    $db->query('update users set name = :name , username=:username,  group_id= :group_id, email=:email, phone=:phone where id = :id', [
+    'id' => $_POST['id'],
+    'email' => $email,
+    'name' => $name,
+    'username' => $user_name,
+    'group_id' => $group_id,
+    'phone' => $phone,
+]);
+}
 
 // redirect the user
 header('location: /users');

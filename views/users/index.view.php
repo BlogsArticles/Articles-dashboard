@@ -25,9 +25,9 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <div class="d-flex justify-content-end">
-                <form class="search-form col-4" action="/groups">
-                    <div class="input-group">
+            <div class="d-flex justify-content-end mb-2">
+                <form class="search-form col-4" action="/users" method="GET">
+                    <div class="input-group ">
                         <input type="text" name="search" class="form-control" placeholder="search">
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-success"><i class="fas fa-search"></i>

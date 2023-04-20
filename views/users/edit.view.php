@@ -34,7 +34,7 @@
 
             <form class="row g-3" action="/users/update" method="post">
 
-            <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" name="_method" value="PUT">
                 <input type="hidden" name="id" value="<?= $user['id'] ?>">
                 <div class="col-12">
 
@@ -83,7 +83,7 @@
                 </div>
                 <div class="col-md-12">
                     <label for="inputPassword4" class="form-label">Password</label>
-                    <input type="password" class="form-control  <?php echo !isset($errors["password"]) ? '' : 'is-invalid' ?>" id="inputPassword4" name="password" value="<?php echo $user['password'] ?? ''; ?>">
+                    <input type="password" class="form-control  <?php echo !isset($errors["password"]) ? '' : 'is-invalid' ?>" id="inputPassword4" name="password">
                     <?php if (isset($errors['password'])) : ?>
                         <div class="invalid-feedback"><?= $errors['password'] ?></div>
                     <?php endif; ?>

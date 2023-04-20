@@ -37,7 +37,7 @@
             <form   class="row g-3" action="/users/store" method="post">
 
             <div class="card-body">
-                <div class="col-12">
+                <div class="col-12 mb-2">
 
                     <label for="inputAddress" class="form-label">Name</label>
                     <input type="text" class="form-control <?php echo !isset($errors["name"]) ? '' : 'is-invalid' ?>" id="inputAddress"  name="name" value="<?php echo $_POST['name'] ?? "";?> " >
@@ -46,7 +46,7 @@
                     <?php endif; ?>
                 </div>
 
-                <div class="col-12">
+                <div class="col-12 mb-2">
                     <label for="inputAddress" class="form-label">User Name</label>
                     <input type="text" class="form-control <?php echo !isset($errors["user_name"]) ? '' : 'is-invalid' ?>" id="inputAddress"  name="user_name" value="<?php echo $_POST['user_name'] ?? "" ;?>">
                     <?php if (isset($errors['user_name'])) : ?>
@@ -54,7 +54,7 @@
                     <?php endif; ?>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-12 mb-2">
                     <label for="inputEmail4" class="form-label">Email</label>
                     <input type="email" class="form-control <?php echo !isset($errors["email"]) ? '' : 'is-invalid' ?>" id="inputEmail4" name="email"value="<?php echo $_POST['email'] ?? "";?>">
                     <?php if (isset($errors['email'])) : ?>
@@ -63,14 +63,14 @@
                 </div>
 
 
-                <div class="col-12">
+                <div class="col-12 mb-2">
                     <label for="inputAddress" class="form-label">Phone</label>
                     <input type="number" class="form-control <?php echo !isset($errors["phone"]) ? '' : 'is-invalid' ?>" id="inputAddress"  name="phone" value="<?php echo $_POST['phone'] ?? '';?>">
                     <?php if (isset($errors['phone'])) : ?>
                         <div class="invalid-feedback"><?= $errors['phone'] ?></div>
                     <?php endif; ?>
                 </div>
-                <div class="col-12">
+                <div class="col-12 mb-2">
                     <label for="inputAddress" class="form-label <?php echo !isset($errors["group"]) ? '' : 'is-invalid' ?>">Select Group</label>
                     <select class=" form-control" aria-label="Default select example" name="group_id">
                         <?php foreach ($group_name as $name) {
@@ -79,7 +79,7 @@
                         ?>
                     </select>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 mb-2">
                     <label for="inputPassword4" class="form-label">Password</label>
                     <input type="password" class="form-control <?php echo !isset($errors["password"]) ? '' : 'is-invalid' ?>" id="inputPassword4" name="password" value="<?php echo $_POST['password'] ?? '';?>">
                     <?php if (isset($errors['password'])) : ?>
