@@ -1,5 +1,6 @@
 {
     "require":{
-        "snapappointments/bootstrap-select":"*"
+        "snapappointments/bootstrap-select":"*",
+        "aws/aws-sdk-php": "*"
     }
 }
