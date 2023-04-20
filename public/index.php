@@ -5,8 +5,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-const BASE_PATH = __DIR__.'/../';
 
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+const BASE_PATH = __DIR__.'/../';
+require __DIR__ . '/../vendor/autoload.php';
 require BASE_PATH.'Core/functions.php';
 
 spl_autoload_register(function ($class) {

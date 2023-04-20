@@ -14,7 +14,7 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/">home</a></li>
                         <li class="breadcrumb-item"><a href="/articles">articles</a></li>
                         <li class="breadcrumb-item"><a href="#"><?= $article['id'] ?></a></li>
                     </ol>
@@ -25,19 +25,31 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <section class="content">
+    <section class="content" style="font-family: 'DejaVu Math TeX Gyre'">
         <div class="container d-flex flex-column">
-            <h2 class="col-12 fw-bold text-center"><strong><?= $article['title'] ?></strong></h2>
-            <div class="text-center">
-                <img src="<?= $article['image'] ?>" class="img-fluid my-3">
+            <div class="card text-bg-light mb-3">
+                <h2 class="col-12 fw-bold text-center card-header"><strong><?= $article['title'] ?></strong></h2>
+                <div class="card-body">
+                    <div class="text-center">
+                        <img  width="80%" height="80%" src="<?= $article['image'] ?>" class="img-fluid my-3">
+                    </div>
+                </div>
             </div>
-            <div>
-                <h4><strong>Content</strong></h4>
-                <p class="fs-4"><?= $article['content'] ?></p>
+            <div class="card text-bg-light mb-3">
+                <h4 class="col-12 fw-bold card-header"><strong>Content</strong></h4>
+                <div class="card-body">
+                    <div>
+                        <p class="fs-5"><?= $article['content'] ?></p>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h4><strong>Summary</strong></h4>
-                <p class="lead"><?= $article['summary'] ?></p>
+            <div class="card text-bg-light mb-3">
+                <h4 class="col-12 fw-bold card-header"><strong>Summary</strong></h4>
+                <div class="card-body">
+                    <div>
+                        <p class="lead"><?= $article['summary'] ?></p>
+                    </div>
+                </div>
             </div>
         </div><!-- /.container-fluid -->
     </section>
