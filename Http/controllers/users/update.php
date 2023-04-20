@@ -3,6 +3,10 @@
 use Core\App;
 use Core\Database;
 use Core\Validator;
+use Core\Authentication as Auth;
+
+
+Auth::only_admin();
 
 $db = App::resolve(Database::class);
 
@@ -20,7 +24,6 @@ $user_name = $_POST['user_name'] ?? "";
 $group_id = $_POST['group_id'] ?? "";
 $phone = $_POST['phone'] ?? "";
 $date = date("Y-m-d H:i:s");
-
 
 
 

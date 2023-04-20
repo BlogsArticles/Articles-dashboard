@@ -9,7 +9,11 @@ return [
     ],
     'username' => 'root',
     'password' => '059825',
+    'logs' => [
+        'file' => BASE_PATH . 'storage/logs/log.txt',
+    ],
     'EXPIRATION_DATE'=> 24 * 60 * 60,
+
     's3' => [
         '_ACCESS_KEY_' => '<your-_ACCESS_KEY_>',
         '_SECRET_' => '<your-_SECRET_>',

@@ -3,6 +3,8 @@
 <?php require('partials/sidebar.php') ?>
 <?php require('partials/banner.php') ?>
 
+
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <div class="content-header">
@@ -37,8 +39,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-
-    Chart.defaults.font.size = 20;
+  Chart.defaults.font.size = 20;
   const ctx = document.getElementById('myChart');
 
   new Chart(ctx, {
@@ -54,6 +55,7 @@
       }]
     },
     options: {
+      responsive:false,
       scales: {
         y: {
           beginAtZero: true

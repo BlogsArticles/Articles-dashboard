@@ -5,4 +5,7 @@ vendor
 config.php
 
 # Log file
-storage/logs/log.txt
+storage/logs/*.txt
+
+#phpstorm files
+.idea

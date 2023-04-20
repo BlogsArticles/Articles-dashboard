@@ -1,1 +1,0 @@
-14-04-23 06:52:15, 127.0.0.1, "Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99", [ERROR], "There is an error", In line 11, In file /mnt/Ahmed/Courses/ITI 9 Months Intake 43/Php/project/Project/Http/controllers/index.php

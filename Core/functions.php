@@ -2,6 +2,8 @@
 
 use Core\Response;
 
+use Core\Authentication;
+
 function dd($value)
 {
     echo "<pre>";
@@ -60,4 +62,14 @@ function rememberValue($value)
         return $_POST[$value];
 
     }
+}
+
+
+function has_role($role)
+{
+    if (Authentication::user()["group_id"] === Authentication::getRoles($role)) {
+        return true;
+    }
+
+    return false;
 }
