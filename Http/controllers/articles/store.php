@@ -1,9 +1,15 @@
 <?php
 
+use Core\Response;
 use Http\Requests\StoreArticlesRequest;
 use Core\Database;
 use Core\App;
 use Core\AwsS3Bucket;
+
+if(!(has_role('admin') || has_role('editor'))){
+    abort(Response::FORBIDDEN);
+}
+
 $errors = (new StoreArticlesRequest)->validateAll();
 
 if( !empty($errors) ){

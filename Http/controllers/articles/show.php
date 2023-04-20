@@ -2,6 +2,13 @@
 use Core\App;
 use Core\Database;
 use Core\AwsS3Bucket;
+use Core\Response;
+
+
+if(!(has_role('admin') || has_role('editor'))){
+    abort(Response::FORBIDDEN);
+}
+
 $db = App::resolve(Database::class);
 
 $articleId = intval($_GET['id']);
