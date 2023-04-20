@@ -16,7 +16,7 @@ class Router
             'uri' => $uri,
             'controller' => $controller,
             'method' => $method,
-            'middleware' => null
+            'middleware' => []
         ];
 
         return $this;
@@ -58,7 +58,10 @@ class Router
     {
         foreach ($this->routes as $route) {
             if ($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
-                Middleware::resolve($route['middleware']);
+                foreach ($route['middleware'] as $middleware) {
+
+                    Middleware::resolve($middleware);
+                }
 
                 return require base_path('Http/controllers/' . $route['controller']);
             }
@@ -74,5 +77,8 @@ class Router
         require base_path("views/{$code}.php");
 
         die();
+    }
+    public function getRoutes(){
+        return $this->routes;
     }
 }
