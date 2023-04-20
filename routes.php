@@ -40,6 +40,17 @@ $router->get('/login', 'session/create.php')->only('guest');
 $router->post('/session', 'session/store.php')->only('guest');
 $router->delete('/session', 'session/destroy.php')->only('auth');
 
+//users-routes
+$router->get('/users', 'users/index.php');
+$router->get('/users/create', 'users/create.php');
+$router->post('/users/store', 'users/store.php');
+$router->get('/users/edit', 'users/edit.php');
+$router->put('/users/update', 'users/update.php');
+$router->delete('/destroy', 'users/destroy.php');
+
+
+/**update `groups` set is_deleted= :date where id= :i */
+/**select * from `groups` where is_deleted is null */
 $router->get('/articles', 'articles/index.php');
 $router->get('/article', 'articles/show.php');
 $router->post('/article', 'articles/store.php');
