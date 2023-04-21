@@ -56,3 +56,14 @@
 20-04-23 04:49:57, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
 20-04-23 04:50:20, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
 20-04-23 04:50:25, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:53:30, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:53:33, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:01:20, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:10:01, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:10:04, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:21:01, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:21:21, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:22:56, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:25:38, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:27:26, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:29:25, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php

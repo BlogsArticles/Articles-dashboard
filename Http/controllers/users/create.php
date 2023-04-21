@@ -4,7 +4,7 @@ use Core\App;
 use Core\Database;
 
 $db = App::resolve(Database::class);
-$group_name = $db->query('select name,id from blog.groups; ')->get();
+$group_name = $db->query('select name,id from `groups`; ')->get();
 
 // var_dump($group_name);
 
