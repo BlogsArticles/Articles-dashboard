@@ -59,7 +59,7 @@
                             <td><?=$group["description"]?></td>
                             <td><i class="fa <?=$group["icon"]?>"></i></td>
                             <td>
-                                <a class="btn" href="group/edit?id=<?=$group["id"]?>"><i class="fas fa-edit"></i></a>
+                                <a class="btn" href="group/edit?id=<?=$group["id"]?>"  class='nav-link active'><i class="fas fa-edit"></i></a>
                             </td>
                             <td>
                                 <form action="group?id=<?=$group["id"]?>" method="post">

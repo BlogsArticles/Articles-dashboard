@@ -44,7 +44,7 @@
                 <?php if(has_role('admin')):?>
                 <li class="nav-item">
                     <a href="/users" class="nav-link">
-                        <i class="fa fa-users fa-fw nav-icon " aria-hidden="true"></i>
+                    <i class="far fa-user fa-fw nav-icon"></i>
                         <p>Users</p>
                     </a>
                 </li>
@@ -61,7 +61,7 @@
 
                 <li class="nav-item">
                     <a href="/articles" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
+                    <i class="fa fa-newspaper fa-fw nav-icon"></i>    
                         <p>Articles</p>
                     </a>
                 </li>
@@ -70,7 +70,7 @@
 
                 <li class="nav-item">
                     <a href="/logout" class="nav-link">
-                        <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-sign-out-alt fa-fw nav-icons"></i>
                         <p>Log Out</p>
                     </a>
                 </li>

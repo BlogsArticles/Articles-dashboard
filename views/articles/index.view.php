@@ -27,7 +27,8 @@
     <!-- Main content -->
     <section class="content">
         <div class="container d-flex justify-content-end">
-            <a href="/article/create" class="btn btn-dark mr-2 mb-2">Add article</a>
+            <a href="/article/create" class="btn btn-dark mr-2 mb-2"><i class="fas fa-plus-circle text-light"> 
+            </i> Add Article</a>
         </div>
         <div class="container-fluid">
             <div class="card text-bg-light mb-3">
@@ -40,7 +41,8 @@
                                 <th>Title</th>
                                 <th>Summary</th>
                                 <th>Published At</th>
-                                <th>Action</th>
+                                <th>show</th>
+                                <th>delete</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -51,11 +53,13 @@
                                     <td style="width: 20em; max-width: 20em; overflow: hidden; text-overflow: ellipsis;"><?= $article['summary'] ?></td>
                                     <td><?= $article['publish_at'] ?></td>
                                     <td class="d-flex">
-                                        <a <?= "href='article?id={$article['id']}'"; ?> class="btn btn-dark mr-2">Show</a>
+                                        <a <?= "href='article?id={$article['id']}'"; ?> class="btn  mr-2"><i class="far fa-eye"></i></a>
+                                        </td>
+                                        <td>
                                         <form action="/article" method="post">
                                             <input name="_method" value="DELETE" type="hidden">
                                             <input name="id" value=<?= $article['id'] ?> type="hidden">
-                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                            <button type="submit" class="btn "><i class="fas fa-trash-alt"></i></button>
                                         </form>
                                     </td>
                                 </tr>
