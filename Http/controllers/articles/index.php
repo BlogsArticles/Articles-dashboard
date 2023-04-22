@@ -1,8 +1,13 @@
 <?php
 
 use Core\App;
+use Core\Authentication;
 use Core\Database;
+use Core\Response;
 
+if(!(has_role('admin') || has_role('editor'))){
+    abort(Response::FORBIDDEN);
+}
 
 $db = App::resolve(Database::class);
 

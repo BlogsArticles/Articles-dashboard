@@ -2,6 +2,8 @@
 
 use Core\Response;
 
+use Core\Authentication;
+
 function dd($value)
 {
     echo "<pre>";
@@ -52,14 +54,6 @@ function redirect($path)
     exit();
 }
 
-// Refactor required
-function moveImage ($imageNewName) {
-    $imageDirectory = base_path('/public/dist/img/articles/');
-    $imageNewPath = $imageDirectory . $imageNewName . '.jpg';
-    $_FILES['image']['name'] = $imageNewName;
-    move_uploaded_file( $_FILES['image']['tmp_name'] , $imageNewPath);
-}
-
 function rememberValue($value)
 {
 
@@ -68,4 +62,14 @@ function rememberValue($value)
         return $_POST[$value];
 
     }
+}
+
+
+function has_role($role)
+{
+    if (Authentication::user()["group_id"] === Authentication::getRoles($role)) {
+        return true;
+    }
+
+    return false;
 }

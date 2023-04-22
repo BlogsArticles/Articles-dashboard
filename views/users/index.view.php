@@ -62,7 +62,7 @@
                             <td><?= $user['email'] ?></td>
                             <td><?= $user['phone'] ?></td>
                             <td><?= $user['group_name'] ?></td>
-                            <td> <a href='/users/edit?id=<?= $user["id"] ?>' class='nav-link active'><i class='fas fa-edit'></i></a> </td>
+                            <td> <a href='/users/edit?id=<?= $user["id"] ?>' class=''><i class='fas fa-edit'></i></a> </td>
 
                             <td>
                                 <form action="destroy?id=<?= $user["id"] ?>" method="post">

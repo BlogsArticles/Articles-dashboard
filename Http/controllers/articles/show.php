@@ -1,6 +1,13 @@
 <?php
 use Core\App;
 use Core\Database;
+use Core\AwsS3Bucket;
+use Core\Response;
+
+
+if(!(has_role('admin') || has_role('editor'))){
+    abort(Response::FORBIDDEN);
+}
 
 $db = App::resolve(Database::class);
 
@@ -11,10 +18,21 @@ $article = $db
         'id' => $articleId
     ])
     ->find();
-$imageDirectory = '/dist/img/articles/';
-$imagePath = $imageDirectory . $article['image'] . '.jpg';
-$article['image'] = $imagePath ;
-view('articles/show.view.php',[
-    'errors' => [],
-    'article' => $article
-]);
+
+
+if ($article) {
+
+    try{
+        $image= (new AwsS3Bucket())->downloadImage($article['image'].'.jpg');
+        view('articles/show.view.php',[
+            'errors' => [],
+            'article' => $article,
+            'image' => $image
+        ]);
+    }catch (Exception $e){
+        view('500.php');
+    }
+
+}else{
+    view('404.php');
+}

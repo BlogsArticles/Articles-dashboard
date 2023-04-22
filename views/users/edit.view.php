@@ -25,19 +25,19 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
+            <div class="card card-dark ">
 
-            <div class="card-header">
-                <h3 class="card-title">Create User</h3>
+            <div class="card-header text-center">
+                <h3 class="card-title">Edit User</h3>
             </div>
 
 
 
             <form class="row g-3" action="/users/update" method="post">
-
-                <input type="hidden" name="_method" value="PUT">
-                <input type="hidden" name="id" value="<?= $user['id'] ?>">
-                <div class="col-12">
-
+            <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="id" value="<?= $user['id'] ?>">
+                <div class="card-body">
+                <div class="col-12 mb-2">
                     <label for="inputAddress" class="form-label">Name</label>
                     <input type="text" class="form-control <?php echo !isset($errors["name"]) ? '' : 'is-invalid' ?>" id="inputAddress" name="name" value="<?php echo $user['name'] ?? ""; ?> ">
                     <?php if (isset($errors['name'])) : ?>
@@ -45,15 +45,15 @@
                     <?php endif; ?>
                 </div>
 
-                <div class="col-12">
-                    <label for="inputAddress" class="form-label">User Name</label>
+                <div class="col-12 mb-2">
+                    <label for="inputAddress" class="form-label">Username</label>
                     <input type="text" class="form-control <?php echo !isset($errors["user_name"]) ? '' : 'is-invalid' ?>" id="inputAddress" name="user_name" value="<?php echo $user['username'] ?? ""; ?>">
                     <?php if (isset($errors['user_name'])) : ?>
                         <div class="invalid-feedback"><?= $errors['user_name'] ?></div>
                     <?php endif; ?>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-12 mb-2">
                     <label for="inputEmail4" class="form-label">Email</label>
                     <input type="email" class="form-control <?php echo !isset($errors["email"]) ? '' : 'is-invalid' ?>" id="inputEmail4" name="email" value="<?php echo $user['email'] ?? ""; ?>">
                     <?php if (isset($errors['email'])) : ?>
@@ -62,18 +62,18 @@
                 </div>
 
 
-                <div class="col-12">
+                <div class="col-12 mb-2">
                     <label for="inputAddress" class="form-label">Phone</label>
                     <input type="number" class="form-control <?php echo !isset($errors["phone"]) ? '' : 'is-invalid' ?>" id="inputAddress" name="phone" value="<?php echo $user['phone'] ?? ''; ?>">
                     <?php if (isset($errors['phone'])) : ?>
                         <div class="invalid-feedback"><?= $errors['phone'] ?></div>
                     <?php endif; ?>
                 </div>
-                <div class="col-12">
-                    <label for="inputAddress" class="form-label  rounded-2 <?php echo !isset($errors["group"]) ? '' : 'is-invalid' ?>">Select Group</label>
-                    <select class=" form-select form-select-lg col-12 pb-3" aria-label="Default select example" name="group_id" aria-placeholder="<?php echo $user['group_name'] ?? ''; ?>">
+                <div class="col-12 mb-2">
+                    <label for="inputAddress" class="form-label  rounded-2 <?php echo !isset($errors["group"]) ? '' : 'is-invalid' ?>">Group</label>
+                    <select class=" form-control  col-12 " aria-label="Default select example" name="group_id" aria-placeholder="<?php echo $user['group_name'] ?? ''; ?>">
 
-                        <option value="<?php echo $user['group_id'] ?>" selected><?php echo $user['group_name']; ?></option>;
+                        <option value="<?php echo $user['group_id'] ?>" selected><?php echo $user['group_name']; ?></option>
 
                         <?php foreach ($group_name as $name) {
                             if ($name['name'] != $user['group_name'])  echo "<option value=$name[id]>$name[name]</option>";
@@ -81,7 +81,7 @@
                         ?>
                     </select>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-12 mb-2">
                     <label for="inputPassword4" class="form-label">Password</label>
                     <input type="password" class="form-control  <?php echo !isset($errors["password"]) ? '' : 'is-invalid' ?>" id="inputPassword4" name="password">
                     <?php if (isset($errors['password'])) : ?>
@@ -89,12 +89,12 @@
                     <?php endif; ?>
                 </div>
 
-                <div class="mt-2 mx-2"><input type="submit" class="btn btn-success" value="Create"></div>
+                <div class="mt-2 mx-2"><input type="submit" class="btn btn-success" value="Update"></div>
 
-
+                </div>
 
             </form>
-
+            </div>
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
