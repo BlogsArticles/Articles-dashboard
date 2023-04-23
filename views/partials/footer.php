@@ -50,14 +50,14 @@
 <script>
     function modalShow(event){
         event.preventDefault();
-        // event.stopPropagation();
-        console.log("asdasdasd")
-        let btnNo=document.getElementById("modalNo");
         let btnYes=document.getElementById("modalYes");
         btnYes.addEventListener("click",()=>{
             event.target.closest("form").submit();
         });
     }
+    setTimeout(() => {
+        $('.toast').toast('hide');
+    }, 5000);
 </script>
 </body>
 </html>
