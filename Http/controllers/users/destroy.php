@@ -17,7 +17,7 @@ if($user["group_id"]==1){
     $message["error"]="couldn't delete this user";
     $_SESSION["_flash"]["delete_message"]=$message;
 
-    header('location: /groups');
+    header('location: /users');
     die();
 }
 $db->query('update `users` set is_deleted= :date where id= :id', [
