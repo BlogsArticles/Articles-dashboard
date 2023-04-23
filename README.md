@@ -32,16 +32,6 @@ We Hope That You are enjoying Watching Our Demo Video
 - JavaSript
 - Bootstrap
 
-## CLIENT APIs
-<div align="center" style="width:100%">
-    
-|  METHODS      |         URI              | ACTIONS | 
-| :---:         |         :---:            | :---: |   
-| POST           | `/login`            | `login` | 
-| GET           | `/login` | `get login page view` |
- 
-</div>
-
 ## SUPPORT
 If you like our work, feel free to </br>
 ⭐ this repository. It helps.
