@@ -1,5 +1,7 @@
 # Blogs
 
+![Screenshot (370)](https://user-images.githubusercontent.com/122277647/233853710-7330e7ef-9fcd-4703-87b6-16ec352cce35.png)
+
 
 ## INTRODUCTION
 
