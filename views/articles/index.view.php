@@ -31,8 +31,6 @@
             </i> Add Article</a>
         </div>
         <div class="container-fluid">
-            <div class="card text-bg-light mb-3">
-                <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-hover text-nowrap">
                             <thead>
@@ -67,8 +65,6 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
         </div><!-- /.container-fluid -->
 
     </section>
