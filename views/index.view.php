@@ -24,7 +24,7 @@
 
     <section class="content">
         <div class="container-fluid">
-            <h1>hello</h1>
+            <h1>Statistics</h1>
         </div>
 
         <div class=" container d-flex justify-content-center">
