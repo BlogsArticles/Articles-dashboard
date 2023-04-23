@@ -6,6 +6,11 @@ namespace Core;
 abstract class Authentication
 {
 
+    private static $roles = [
+        'admin' =>  1,
+        'editor' => 2
+    ];
+
     public static function checkUser($email, $password)
     {
         $query = 'select * from users where email = :email';
@@ -119,5 +124,14 @@ abstract class Authentication
             abort(Response::FORBIDDEN);
         }
     }
+
+
+    public static function getRoles($role){
+        return self::$roles[$role];
+    }
+
+
+
+
 }
 

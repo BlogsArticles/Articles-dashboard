@@ -3,6 +3,9 @@
 use Core\App;
 use Core\Database;
 use Core\Validator;
+use Core\Authentication as Auth;
+
+Auth::only_admin();
 
 $db = App::resolve(Database::class);
 
@@ -13,9 +16,6 @@ $user_name = $_POST['user_name'] ?? "";
 $group_id = $_POST['group_id'] ?? "";
 $phone = $_POST['phone'] ?? "";
 $date = date("Y-m-d H:i:s");
-
-
-
 
 $errors = [];
 if (!Validator::email($email)) {
@@ -50,9 +50,7 @@ if ($user) {
     $errors['email'] = 'this email already exists.';
 }
 
-
 if (!empty($errors)) {
-    // dd("hi");
     $group_name = $db->query('select name,id from `groups`; ')->get();
 
     view('users/create.view.php', [
@@ -60,15 +58,10 @@ if (!empty($errors)) {
         'group_name' => $group_name,
 
 
-
     ]);
 
     exit();
 }
-
-
-
-
 
 $hashed_password = hash('sha256', $_POST['password']);
 $db->query('INSERT INTO users(email, password,name,username,group_id,phone,subscribe_at) VALUES(:email, :password,:name, :username, :group_id,:phone, :subscribe_at)', [

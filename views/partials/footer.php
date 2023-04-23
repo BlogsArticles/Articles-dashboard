@@ -14,7 +14,17 @@
 <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+<?php if(isset($_SESSION["_flash"]["delete_message"])){?>
+    <div id="toastsContainerTopRight" class="toasts-top-right fixed w-25">
+        <div class="toast bg-dark fade show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header"><strong class="mr-auto">Info</strong>
+        </div>
+        <div class="toast-body"> 
+            <?=$_SESSION["_flash"]["delete_message"]["error"]??$_SESSION["_flash"]["delete_message"]["success"]?>
+        </div>
+        </div>
+    </div>
+<?php } ?>
 <!-- jQuery -->
 <script src="/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -25,13 +35,6 @@
 </script>
 <!-- Bootstrap 4 -->
 <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="/plugins/chart.js/Chart.min.js"></script>
-<!-- Sparkline -->
-<script src="/plugins/sparklines/sparkline.js"></script>
-<!-- JQVMap -->
-<script src="/plugins/jqvmap/jquery.vmap.min.js"></script>
-<script src="/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
 <!-- jQuery Knob Chart -->
 <script src="/plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
@@ -48,5 +51,19 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/dist/js/pages/dashboard.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+
+
+<script>
+    function modalShow(event){
+        event.preventDefault();
+        let btnYes=document.getElementById("modalYes");
+        btnYes.addEventListener("click",()=>{
+            event.target.closest("form").submit();
+        });
+    }
+    setTimeout(() => {
+        $('.toast').toast('hide');
+    }, 5000);
+</script>
 </body>
 </html>

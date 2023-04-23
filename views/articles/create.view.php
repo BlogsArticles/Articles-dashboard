@@ -41,11 +41,17 @@
                     </div>
                     <div class="form-group">
                         <label for="content">Article Image</label>
-                        <input class="form-control" name="image" type="file" id="image" accept="image/*">
-                        <?php if( isset($errors['image']) ): ?>
-                            <span style="color: red; font-weight: bolder;""><?= $errors['image'] ;?></span>
-                        <?php endif; ?>
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <input type="file" accept="image/*" name="image" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                            <?php if( isset($errors['image']) ): ?>
+                                <span style="color: red; font-weight: bolder;""><?= $errors['image'] ;?></span>
+                            <?php endif; ?>
+                        </div>
                     </div>
+
                     <div class="form-group">
                         <label for="content">Content</label>
                         <textarea class="form-control" cols="10"  rows="4" name="content" id="content" placeholder="Enter article content"><?php echo isset($_POST['content']) ? htmlspecialchars($_POST['content'], ENT_QUOTES) : ''; ?></textarea>

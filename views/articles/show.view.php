@@ -26,32 +26,15 @@
 
     <!-- Main content -->
     <section class="content" style="font-family: 'DejaVu Math TeX Gyre'">
-        <div class="container d-flex flex-column">
-            <div class="card text-bg-light mb-3">
-                <h2 class="col-12 fw-bold text-center card-header"><strong><?= $article['title'] ?></strong></h2>
-                <div class="card-body">
-                    <div class="text-center">
-                        <img  width="80%" height="80%" src="<?= $image ?>" class="img-fluid my-3">
-                    </div>
-                </div>
+        <div class="card mb-3">
+            <img  src="<?= $image ?>" class="card-img-top w-50 h-50 mb-3 mx-auto">
+            <div class="card-body">
+                <h5 class="card-title mb-3"><strong><?= $article['title'] ?></strong></h5>
+                <p class="card-text mb-3"><?= $article['content'] ?></p>
+                <h5 class="card-title mt-3 mb-2"><strong>Summary</strong></h5>
+                <p class="card-text"><p class="text-body-secondary"><?= $article['summary'] ?></p>
             </div>
-            <div class="card text-bg-light mb-3">
-                <h4 class="col-12 fw-bold card-header"><strong>Content</strong></h4>
-                <div class="card-body">
-                    <div>
-                        <p class="fs-5"><?= $article['content'] ?></p>
-                    </div>
-                </div>
-            </div>
-            <div class="card text-bg-light mb-3">
-                <h4 class="col-12 fw-bold card-header"><strong>Summary</strong></h4>
-                <div class="card-body">
-                    <div>
-                        <p class="lead"><?= $article['summary'] ?></p>
-                    </div>
-                </div>
-            </div>
-        </div><!-- /.container-fluid -->
+        </div>
     </section>
     <!-- /.content -->
 </div>

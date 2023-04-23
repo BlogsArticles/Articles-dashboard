@@ -27,11 +27,10 @@
     <!-- Main content -->
     <section class="content">
         <div class="container d-flex justify-content-end">
-            <a href="/article/create" class="btn btn-dark mr-2 mb-2">Add article</a>
+            <a href="/article/create" class="btn btn-dark mr-2 mb-2"><i class="fas fa-plus-circle text-light"> 
+            </i> Add Article</a>
         </div>
         <div class="container-fluid">
-            <div class="card text-bg-light mb-3">
-                <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-hover text-nowrap">
                             <thead>
@@ -40,7 +39,8 @@
                                 <th>Title</th>
                                 <th>Summary</th>
                                 <th>Published At</th>
-                                <th>Action</th>
+                                <th>show</th>
+                                <th>delete</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -51,11 +51,13 @@
                                     <td style="width: 20em; max-width: 20em; overflow: hidden; text-overflow: ellipsis;"><?= $article['summary'] ?></td>
                                     <td><?= $article['publish_at'] ?></td>
                                     <td class="d-flex">
-                                        <a <?= "href='article?id={$article['id']}'"; ?> class="btn btn-dark mr-2">Show</a>
+                                        <a <?= "href='article?id={$article['id']}'"; ?> class="btn  mr-2"><i class="far fa-eye"></i></a>
+                                        </td>
+                                        <td>
                                         <form action="/article" method="post">
                                             <input name="_method" value="DELETE" type="hidden">
                                             <input name="id" value=<?= $article['id'] ?> type="hidden">
-                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                            <button type="submit" class="btn" id="btnDelete" onclick="modalShow(event)" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-trash-alt"></i></button>
                                         </form>
                                     </td>
                                 </tr>
@@ -63,15 +65,31 @@
                             </tbody>
                         </table>
                     </div>
-                </div>
-            </div>
         </div><!-- /.container-fluid -->
 
     </section>
     <!-- /.content -->
 </div>
 
-
+<div class="modal fade" id="exampleModal" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Delete Article</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete this Article?</p>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-success" data-dismiss="modal" id="modalNo">no</button>
+                <button type="button" class="btn btn-danger" id="modalYes">yes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <?php require base_path('views/partials/footer.php') ?>
