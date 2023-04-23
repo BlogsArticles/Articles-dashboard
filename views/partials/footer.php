@@ -14,7 +14,17 @@
 <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+<?php if(isset($_SESSION["_flash"]["delete_message"])){?>
+    <div id="toastsContainerTopRight" class="toasts-top-right fixed w-25">
+        <div class="toast bg-dark fade show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header"><strong class="mr-auto">Info</strong>
+        </div>
+        <div class="toast-body"> 
+            <?=$_SESSION["_flash"]["delete_message"]["error"]??$_SESSION["_flash"]["delete_message"]["success"]?>
+        </div>
+        </div>
+    </div>
+<?php } ?>
 <!-- jQuery -->
 <script src="/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -41,5 +51,23 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/dist/js/pages/dashboard.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+<div class="toast-container mt-5 p-3 top-0 end-0" id="toastPlacement" data-original-class="toast-container p-3">
+    <div class="toast bg-succes fade" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-body d-flex align-items-center"></div>
+    </div>
+</div>
+
+<script>
+    function modalShow(event){
+        event.preventDefault();
+        let btnYes=document.getElementById("modalYes");
+        btnYes.addEventListener("click",()=>{
+            event.target.closest("form").submit();
+        });
+    }
+    setTimeout(() => {
+        $('.toast').toast('hide');
+    }, 5000);
+</script>
 </body>
 </html>

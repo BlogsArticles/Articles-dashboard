@@ -24,7 +24,7 @@
 
     <section class="content">
         <div class="container-fluid">
-            <h1>hello</h1>
+            <h1>Statistics</h1>
         </div>
 
         <div class=" container d-flex justify-content-center">
@@ -41,7 +41,15 @@
 <script>
   Chart.defaults.font.size = 20;
   const ctx = document.getElementById('myChart');
-
+  function setBg() {
+    let colors=[];
+    let count=+<?=count($count)?>;
+    for(let i =0;i<count;i++){
+      colors.push("#"+Math.floor(Math.random()*16777215).toString(16))
+    }
+    return colors;
+    
+  }
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -51,7 +59,7 @@
         data: <?php echo json_encode($count) ?>,
         borderWidth: 1,
         borderColor: '#19376D',
-        backgroundColor: '#0B2447',
+        backgroundColor: setBg(),
       }]
     },
     options: {
