@@ -14,7 +14,17 @@
 <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+<?php if(isset($_SESSION["_flash"]["delete_message"])){?>
+    <div id="toastsContainerTopRight" class="toasts-top-right fixed w-25">
+        <div class="toast bg-dark fade show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header"><strong class="mr-auto">Info</strong>
+        </div>
+        <div class="toast-body"> 
+            <?=$_SESSION["_flash"]["delete_message"]["error"]??$_SESSION["_flash"]["delete_message"]["success"]?>
+        </div>
+        </div>
+    </div>
+<?php } ?>
 <!-- jQuery -->
 <script src="/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->

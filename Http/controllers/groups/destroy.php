@@ -23,7 +23,7 @@ if(!isset($_POST["id"])){
 if(in_array($_POST["id"] ,[1,2])){
     // abort(Response::FORBIDDEN);
     $message["error"]="couldn't delete this group";
-    $_SESSION["_flash"]["delete_group"]=$message;
+    $_SESSION["_flash"]["delete_message"]=$message;
 
     header('location: /groups');
     die();
@@ -38,7 +38,7 @@ $updated=$db->query('update `groups` set is_deleted= :date where id= :id',[
     "date"=>date("Y-m-d H:i:s")
 ]);
 $message["success"]="group deleted successfuly";
-$_SESSION["_flash"]["delete_group"]=$message;
+$_SESSION["_flash"]["delete_message"]=$message;
 
 header('location: /groups');
 die();
