@@ -11,7 +11,7 @@ The panel consists of several pages/sections, such as `login`, `home`, `groups` 
 ## DEMO
 🎬
 We Hope That You are enjoying Watching Our Demo Video 
-[Click Here]()
+[Click Here](https://youtu.be/DIo-XWurW4w)
 
 ## FEATURES
 
