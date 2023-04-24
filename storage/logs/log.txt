@@ -30,14 +30,43 @@
 16-04-23 10:46:37, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [2002] No such file or directory", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
 16-04-23 10:50:46, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [1049] Unknown database 'blogsasd'", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
 16-04-23 10:55:51, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [1049] Unknown database 'blogsasd'", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
-<<<<<<< HEAD
 16-04-23 11:49:10, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [1049] Unknown database 'blogsdfds'", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
-=======
 16-04-23 09:29:50, ::1, "Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99", [ERROR], "SQLSTATE[42S22]: Column not found: 1054 Unknown column 'groups.name' in 'field list'", In line 28, In file C:\xampp\htdocs\Articles-dashboard\Core\Database.php
->>>>>>> 4abc95b0db9577b060b5cbfe7c8f6a6a60252fda
+17-04-23 10:10:38, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [2002] No such file or directory", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
 18-04-23 12:12:47, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)", In line 19, In file /home/ahmedzein/Desktop/articles-dashboard /Articles-dashboard/Core/Database.php
 18-04-23 12:13:01, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)", In line 19, In file /home/ahmedzein/Desktop/articles-dashboard /Articles-dashboard/Core/Database.php
 18-04-23 12:13:06, 127.0.0.1, , [ERROR], "SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)", In line 19, In file /home/ahmedzein/Desktop/articles-dashboard /Articles-dashboard/Core/Database.php
+20-04-23 04:42:38, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:42:53, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:43:43, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:43:50, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:43:57, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:44:27, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:44:29, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:45:15, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:45:18, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:45:48, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:45:50, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:46:12, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:47:15, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:48:40, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:49:08, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:49:42, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:49:45, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:49:57, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:50:20, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:50:25, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:53:30, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 04:53:33, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:01:20, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:10:01, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:10:04, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:21:01, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:21:21, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:22:56, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:25:38, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:27:26, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
+20-04-23 05:29:25, 127.0.0.1, , [ERROR], "could not find driver", In line 19, In file /media/mahmoud/البرمجيات/iti OS intake 43/iti projects/Articles-dashboard/Core/Database.php
 20-04-23 02:58:37, ::1, "Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99", [ERROR], "SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)", In line 18, In file C:\xampp\htdocs\php-project\Articles-dashboard\Core\Database.php
 20-04-23 02:58:50, ::1, "Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99", [ERROR], "SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)", In line 18, In file C:\xampp\htdocs\php-project\Articles-dashboard\Core\Database.php
 21-04-23 07:46:43, ::1, "Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99", [ERROR], "SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)", In line 18, In file C:\xampp\htdocs\php-project\Articles-dashboard\Core\Database.php

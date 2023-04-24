@@ -10,7 +10,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">groups</h1>
+                    <h1 class="m-0">users in Group</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -68,6 +68,17 @@
 
                     </tbody>
                 </table>
+                <div class="col d-flex justify-content-end mt-2">
+                    <nav aria-label="Page navigation example col-10">
+                        <ul class="pagination pagination-md">
+                            <li class="page-item"><a class="page-link" href="?page=<?php echo $page-1<1?1:$page-1; echo isset($_GET["id"])?'&id='.$_GET["id"]:''; ?>">Previous</a></li>
+                            <?php for($i=1; $i<=$max; $i++){?>
+                                <li class="page-item <?php echo $page==$i?'active':''?>"><a class="page-link" href="?page=<?=$i?><?php echo isset($_GET["id"])?'&id='.$_GET["id"]:'';?>"><?=$i?></a></li>
+                            <?php }?>
+                            <li class="page-item"><a class="page-link" href="?page=<?php echo $page+1>$max?$max:$page+1; echo isset($_GET["id"])?'&id='.$_GET["id"]:'';?>">Next</a></li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </div><!-- /.container-fluid -->
     </section>

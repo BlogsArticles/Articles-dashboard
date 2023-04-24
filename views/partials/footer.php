@@ -51,11 +51,7 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="/dist/js/pages/dashboard.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-<div class="toast-container mt-5 p-3 top-0 end-0" id="toastPlacement" data-original-class="toast-container p-3">
-    <div class="toast bg-succes fade" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="toast-body d-flex align-items-center"></div>
-    </div>
-</div>
+
 
 <script>
     function modalShow(event){
