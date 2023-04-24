@@ -15,6 +15,12 @@ $offset=10;
 $max=0;
 $page=1;
 
+if(isset($_GET["page"]) && is_numeric($_GET["page"])){
+    $page=intval($_GET["page"]);
+    $start=($page-1)*$offset;
+    
+}
+
 $count=$db->query('select count(*) from `articles` where is_deleted is null')->find();
 $max=ceil($count["count(*)"]/$offset);
 $articles = $db
