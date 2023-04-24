@@ -15,7 +15,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item">Groups</li>
+                        <li class="breadcrumb-item">Users in Group</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -49,7 +49,6 @@
                             <th>Phone</th>
                             <th>Group Name</th>
                             <th>Subscribe at</th>
-                            <th>Last visit</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -62,7 +61,6 @@
                             <td><?=$user["phone"]?></td>
                             <td><?=$user["group_name"]?></td>
                             <td><?=$user["subscribe_at"]?></td>
-                            <td><?=$user["last_vist"]??""?></td>
                         </tr>
                         <?php }?>
 
